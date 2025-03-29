@@ -2,8 +2,8 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
 
--- LIBRARY MY_LIB;
--- USE MY_LIB.ATOMIC_COMPONENTS.ALL;
+LIBRARY ATOMIC_COMPONENTS;
+USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
 
 ENTITY PARTE02 IS
 	PORT(
@@ -17,17 +17,18 @@ END ENTITY PARTE02;
 
 ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
     SIGNAL Z: std_logic;
-    SIGNAL Y_CA: Std_logic_vector(2 DOWNTO 0);
+    SIGNAL Y_CA: Std_logic_vector(3 DOWNTO 0);
     SIGNAL Y_CB: Std_logic_vector(3 DOWNTO 0);
     SIGNAL Y_MUX: Std_logic_vector(3 DOWNTO 0);
 
 BEGIN
 	-- Porting all components
     COMP: COMPARATOR_NBIT
-    PORT MAP (SW, Z);
+    GENERIC MAP (4)
+    PORT MAP (SW, "1010", Z);
 
     CA: CIRCUITA
-    PORT MAP (SW(2 DOWNTO 0), Y_CA);
+    PORT MAP (SW(2 DOWNTO 0), Y_CA(2 DOWNTO 0));
 
     Y_MUX(3) <= SW(3) WHEN Z = '0' ELSE '0';
     Y_MUX(2) <= SW(2) WHEN Z = '0' ELSE Y_CA(2);
@@ -41,6 +42,7 @@ BEGIN
     HEX1_CONV_4_TO_7: CONV_4_TO_7
     PORT MAP (Y_CB, HEX1);
         
+    Y_CA(3) <= '0';
     HEX0_CONV_4_TO_7: CONV_4_TO_7
     PORT MAP (Y_CA, HEX0);
 
