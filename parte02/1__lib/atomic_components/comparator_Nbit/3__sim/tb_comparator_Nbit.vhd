@@ -35,6 +35,7 @@ ARCHITECTURE BEHAVIORAL OF TB_COMPARATOR_NBIT IS
     GENERIC MAP(
       N => 4
     )
+	 
     PORT MAP (
       X1,
       X2,
@@ -45,84 +46,84 @@ ARCHITECTURE BEHAVIORAL OF TB_COMPARATOR_NBIT IS
     process
     begin
         -- Test Case 0: A = 0000, B = 1010
-        A <= "0000"; B <= "1010";
+        X1 <= "0000"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 0 Failed" severity error;
 
         -- Test Case 1: A = 0001, B = 1010
-        A <= "0001"; B <= "1010";
+        X1 <= "0001"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 1 Failed" severity error;
 
         -- Test Case 2: A = 0010, B = 1010
-        A <= "0010"; B <= "1010";
+        X1 <= "0010"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 2 Failed" severity error;
 
         -- Test Case 3: A = 0011, B = 1010
-        A <= "0011"; B <= "1010";
+        X1 <= "0011"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 3 Failed" severity error;
 
         -- Test Case 4: A = 0100, B = 1010
-        A <= "0100"; B <= "1010";
+        X1 <= "0100"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 4 Failed" severity error;
 
         -- Test Case 5: A = 0101, B = 1010
-        A <= "0101"; B <= "1010";
+        X1 <= "0101"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 5 Failed" severity error;
 
         -- Test Case 6: A = 0110, B = 1010
-        A <= "0110"; B <= "1010";
+        X1 <= "0110"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 6 Failed" severity error;
 
         -- Test Case 7: A = 0111, B = 1010
-        A <= "0111"; B <= "1010";
+        X1 <= "0111"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 7 Failed" severity error;
 
         -- Test Case 8: A = 1000, B = 1010
-        A <= "1000"; B <= "1010";
+        X1 <= "1000"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 8 Failed" severity error;
 
         -- Test Case 9: A = 1001, B = 1010
-        A <= "1001"; B <= "1010";
+        X1 <= "1001"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 9 Failed" severity error;
 
         -- Test Case 10: A = 1010, B = 1010
-        A <= "1010"; B <= "1010";
+        X1 <= "1010"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '0') report "Test Case 1 Failed" severity error;
+        assert (R = '0') report "Test Case 10 Failed" severity error;
 
         -- Test Case 11: A = 1011, B = 1010
-        A <= "1011"; B <= "1010";
+        X1 <= "1011"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '1') report "Test Case 1 Failed" severity error;
+        assert (R = '1') report "Test Case 11 Failed" severity error;
 
         -- Test Case 12: A = 1100, B = 1010
-        A <= "1100"; B <= "1010";
+        X1 <= "1100"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '1') report "Test Case 1 Failed" severity error;
+        assert (R = '1') report "Test Case 12 Failed" severity error;
 
         -- Test Case 13: A = 1101, B = 1010
-        A <= "1101"; B <= "1010";
+        X1 <= "1101"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '1') report "Test Case 1 Failed" severity error;
+        assert (R = '1') report "Test Case 13 Failed" severity error;
 
         -- Test Case 14: A = 1110, B = 1010
-        A <= "1110"; B <= "1010";
+        X1 <= "1110"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '1') report "Test Case 1 Failed" severity error;
+        assert (R = '1') report "Test Case 14 Failed" severity error;
 
         -- Test Case 15: A = 1111, B = 1010
-        A <= "1111"; B <= "1010";
+        X1 <= "1111"; X2 <= "1010";
         wait for 10 ns;
-        assert (COMP = '1') report "Test Case 1 Failed" severity error;
+        assert (R = '1') report "Test Case 15 Failed" severity error;
 
         -- End of test
         report "All test cases passed!" severity note;

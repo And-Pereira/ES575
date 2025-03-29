@@ -15,7 +15,7 @@ ARCHITECTURE BEHAVIORAL OF tb_circuita IS
       -- DEFINE INPUT/OUTPUT
     PORT(
         X: IN std_logic_vector(2 DOWNTO 0);
-        Y: OUT std_logic_vector(2 DOWNTO 0);
+        Y: OUT std_logic_vector(2 DOWNTO 0)
 
     );
   

@@ -13,8 +13,8 @@ ARCHITECTURE BEHAVIORAL OF tb_circuitB IS
   COMPONENT CIRCUITB
       -- DEFINE INPUT/OUTPUT
     PORT(
-        X; IN std_logic;
-        Y: OUT std_logic_vector( 3 DOWNTO 0);
+        X: IN std_logic;
+        Y: OUT std_logic_vector( 3 DOWNTO 0)
 
     );
   
@@ -36,12 +36,12 @@ ARCHITECTURE BEHAVIORAL OF tb_circuitB IS
     process
     begin
         -- Test Case 0: 
-        X1 <= '0'
+        X1 <= '0';
         wait for 10 ns;
         assert (R = "0000") report "Test Case 1 Failed" severity error;
 
         -- Test Case 1: 
-        X1 <= '1'
+        X1 <= '1';
         wait for 10 ns;
         assert (R = "0001") report "Test Case 1 Failed" severity error;
 

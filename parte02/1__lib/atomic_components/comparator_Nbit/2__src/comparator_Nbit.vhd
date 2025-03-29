@@ -6,8 +6,7 @@ USE IEEE.std_logic_1164.all;
 ENTITY COMPARATOR_NBIT IS
     -- Define generic parameters
     GENERIC (
-        N: INTEGER -- NO DEFAULT VALUE
-
+        N: INTEGER :=4 -- 4 AS DEFAULT VALUE
     );
 
     --Define I/O
@@ -32,21 +31,23 @@ ARCHITECTURE ARCH_COMPARATOR_NBIT OF COMPARATOR_NBIT IS
 
 
 BEGIN
-    -- Base case
+    -- Base case 
     EQ(0) <= NOT(A(N-1) XOR B(N-1));
     GT (0) <= A(N-1) AND NOT(B(N-1));
     TERM(0) <= '1';
-    TERM_COMP(0) <= TERM(0) AND EQ(0);
-    TERM_UNION(0) <= TERM_COMP(0)
+    TERM_COMP(0) <= TERM(0) AND GT(0);
+    TERM_UNION(0) <= TERM_COMP(0);
 
 
-    GEN_TERMS: FOR i in 1 TO N-1 GENERATE
-        EQ(i) <= NOT(A(N-1 - i) XOR B(N-1 - i));
-        GT (i) <= A(N-1 - i) AND NOT(B(N-1 - i));
-        TERM(i) <= TERM(i-1) AND EQ(i-1);
-        TERM_COMP(i) <= TERM(i) AND EQ(i);
-        TERM_UNION(i) <= TERM_UNION(i-1) OR TERM_COMP(i);
-            
+	 GEN_TERMS: FOR i in 1 TO N-1 GENERATE
+		 EQ(i) <= NOT(A(N-1 - i) XOR B(N-1 - i));
+		 GT (i) <= A(N-1 - i) AND NOT(B(N-1 - i));
+		 TERM(i) <= TERM(i-1) AND EQ(i-1);
+		 TERM_COMP(i) <= TERM(i) AND GT(i);
+		 TERM_UNION(i) <= TERM_UNION(i-1) OR TERM_COMP(i);
+		 
+	END GENERATE;
+				
 RES <= TERM_UNION(N-1);
             
 

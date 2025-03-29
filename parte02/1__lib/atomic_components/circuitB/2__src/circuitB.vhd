@@ -6,8 +6,8 @@ USE IEEE.std_logic_1164.all;
 ENTITY circuitB IS
     --Define I/O
     PORT(
-        X; IN std_logic;
-        Y: OUT std_logic_vector( 3 DOWNTO 0);
+        X: IN std_logic;
+        Y: OUT std_logic_vector( 3 DOWNTO 0)
 
     );
 
