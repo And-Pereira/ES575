@@ -25,10 +25,10 @@ BEGIN
 	-- Porting all components
     COMP: COMPARATOR_NBIT
     GENERIC MAP (4)
-    PORT MAP (SW, "1010", Z);
+    PORT MAP (SW, "1001", Z);
 
     CA: CIRCUITA
-    PORT MAP (SW(2 DOWNTO 0), Y_CA);
+    PORT MAP (SW(2 DOWNTO 0), Y_CA(2 DOWNTO 0));
 
     Y_MUX(3) <= SW(3) WHEN Z = '0' ELSE '0';
     Y_MUX(2) <= SW(2) WHEN Z = '0' ELSE Y_CA(2);
@@ -37,13 +37,12 @@ BEGIN
 
     CB: CIRCUITB
     PORT MAP (Z, Y_CB);
-
-		  
+	  
     HEX1_CONV_4_TO_7: CONV_4_TO_7
     PORT MAP (Y_CB, HEX1);
         
     HEX0_CONV_4_TO_7: CONV_4_TO_7
-    PORT MAP (Y_CA, HEX0);
+    PORT MAP (Y_MUX, HEX0);
 
 
 

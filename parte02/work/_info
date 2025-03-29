@@ -30,7 +30,7 @@ Z3 OV;C;10.5b;63
 Z4 o-work work -2002 -explicit
 Z5 tExplicit 1 CvgOpt 0
 Eparte02
-Z6 w1743219122
+Z6 w1743223521
 Z7 DPx17 atomic_components 17 atomic_components 0 22 ;j@YQ8R9F;?<Z`a4[AV8_1
 R1
 R2
@@ -43,9 +43,9 @@ V@9TGEYGZQ`m?;Ezlde<zz3
 !s100 Tz2@IjTei@imQ2VlF?GY=1
 R3
 32
-Z10 !s110 1743219127
+Z10 !s110 1743223526
 !i10b 1
-Z11 !s108 1743219127.000000
+Z11 !s108 1743223526.000000
 Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
 Z13 !s107 C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
 !i113 1
@@ -55,11 +55,11 @@ Aarch_parte02
 R7
 R1
 R2
-DEx4 work 7 parte02 0 22 @9TGEYGZQ`m?;Ezlde<zz3
+Z14 DEx4 work 7 parte02 0 22 @9TGEYGZQ`m?;Ezlde<zz3
 l24
 L18
-V]OX?WWTOza8];bEC9nRI`0
-!s100 B]7TPX3iOD2WJg@G^V7gN3
+Vmo=VKaVfBFXWMH^OHc7Ro1
+!s100 DLF6Nii<k6bdJPQ4I28b;3
 R3
 32
 R10
@@ -67,6 +67,47 @@ R10
 R11
 R12
 R13
+!i113 1
+R4
+R5
+Etb_parte02
+Z15 w1743222935
+R7
+R1
+R2
+R0
+Z16 8C:/Users/carol/Desktop/ES575/parte02/3__sim/tb_parte02.vhd
+Z17 FC:/Users/carol/Desktop/ES575/parte02/3__sim/tb_parte02.vhd
+l0
+L8
+V4QHl]JAOOFZei9jOZl=0P0
+!s100 >]X6cj7P5^@:a=3NmDZJJ2
+R3
+32
+Z18 !s110 1743222961
+!i10b 1
+Z19 !s108 1743222961.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/3__sim/tb_parte02.vhd|
+Z21 !s107 C:/Users/carol/Desktop/ES575/parte02/3__sim/tb_parte02.vhd|
+!i113 1
+R4
+R5
+Abehavioral
+R7
+R1
+R2
+DEx4 work 10 tb_parte02 0 22 4QHl]JAOOFZei9jOZl=0P0
+l30
+L14
+VbnVG7Fn[DQAKhcLXG>ceI2
+!s100 ]U7Gk@OT8AW0KkH12e_kC2
+R3
+32
+R18
+!i10b 1
+R19
+R20
+R21
 !i113 1
 R4
 R5
