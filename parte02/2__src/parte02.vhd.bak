@@ -1,0 +1,54 @@
+-- Library importing
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+
+LIBRARY ATOMIC_COMPONENTS;
+USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
+
+ENTITY PARTE02 IS
+	PORT(
+		KEY0: IN std_logic; -- Clock
+		SW0: IN std_logic; -- Clear
+		SW1: IN std_logic; -- Enable
+		HEX0: OUT std_logic_vector(6 DOWNTO 0) -- Contador
+	
+	);
+	
+END ENTITY PARTE02;
+
+
+ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
+    SIGNAL Q: Std_logic_vector(3 DOWNTO 0);
+    SIGNAL Qnot: Std_logic_vector(3 DOWNTO 0);
+    SIGNAL T: Std_logic_vector(3 DOWNTO 0);
+
+BEGIN
+	-- Porting all components
+    FFT0: FLIP_FLOP_T
+    PORT MAP (KEY0, T(0), '1', SW0,
+		Q(0), Qnot(0));
+
+    FFT1: FLIP_FLOP_T
+    PORT MAP (KEY0, T(1), '1', SW0,
+		Q(1), Qnot(1));
+
+    FFT2: FLIP_FLOP_T
+    PORT MAP (KEY0, T(2), '1', SW0,
+		Q(2), Qnot(2));
+
+    FFT3: FLIP_FLOP_T
+    PORT MAP (KEY0, T(3), '1', SW0,
+		Q(3), Qnot(3));
+
+    T(3) <= T(2) AND Q(2);
+    T(2) <= T(1) AND Q(1);
+    T(1) <= T(0) AND Q(0);
+    T(0) <= SW1;
+  
+        
+    HEX0_CONV_4_TO_7: CONV_4_TO_7_HEX
+    PORT MAP (Q, HEX0);
+
+
+
+END ARCHITECTURE ARCH_PARTE02;

@@ -1,0 +1,17 @@
+C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/3__sim/tb_latch_d.vhd {1 {vcom -work work -2002 -explicit C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/3__sim/tb_latch_d.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity TB_LATCH_D
+-- Compiling architecture BEHAVIORAL of TB_LATCH_D
+
+} {} {}} C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/2__src/latch_d.vhd {1 {vcom -work work -2002 -explicit C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/2__src/latch_d.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity LATCH_D
+-- Compiling architecture BEHAVIOR of LATCH_D
+
+} {} {}}

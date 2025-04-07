@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\aluno\Documents\ES575\lab04\parte01\latch_d
+Elatch_d
+Z1 w1743460671
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\aluno\Documents\ES575\lab04\parte01\latch_d
+Z5 8C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/2__src/latch_d.vhd
+Z6 FC:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/2__src/latch_d.vhd
+l0
+L6
+VSAh3[ZVYO3DGJUVXGSii[1
+Z7 OV;C;10.1d;51
+32
+Z8 !s108 1743460673.047000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/2__src/latch_d.vhd|
+Z10 !s107 C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/2__src/latch_d.vhd|
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+!s100 VS6gP[AnnLAXm8fEQHSgF3
+!i10b 1
+Abehavior
+R2
+R3
+DEx4 work 7 latch_d 0 22 SAh3[ZVYO3DGJUVXGSii[1
+l16
+L15
+V<64<3j]V?2h9YL;R?D>:D2
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 g]6E1PhZ7eUbkej9>7ZBn2
+!i10b 1
+Etb_latch_d
+Z13 w1743461000
+R2
+R3
+R4
+Z14 8C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/3__sim/tb_latch_d.vhd
+Z15 FC:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/3__sim/tb_latch_d.vhd
+l0
+L6
+VOL]@zPGRk4k3e^BZ5bieb2
+!s100 MZg<;5_>aWhFdm9O_:_dJ1
+R7
+32
+!i10b 1
+Z16 !s108 1743461001.663000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/3__sim/tb_latch_d.vhd|
+Z18 !s107 C:/Users/aluno/Documents/ES575/lab04/parte01/latch_d/3__sim/tb_latch_d.vhd|
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 10 tb_latch_d 0 22 OL]@zPGRk4k3e^BZ5bieb2
+l26
+L11
+V@Y?1d@gj>kAYJUER206U51
+!s100 ]Kfg1MSoI5GiVIXAkGE2?2
+R7
+32
+!i10b 1
+R16
+R17
+R18
+R11
+R12
