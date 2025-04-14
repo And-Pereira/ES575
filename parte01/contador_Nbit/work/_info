@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/carol/Desktop/ES575/parte01/contador_Nbit
+Econtador_nbit
+Z1 w1744598064
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/carol/Desktop/ES575/parte01/contador_Nbit/2__src/contador_Nbit.vhd
+Z6 FC:/Users/carol/Desktop/ES575/parte01/contador_Nbit/2__src/contador_Nbit.vhd
+l0
+L7
+VVT<EgeM56m5EGN]mD8gmG0
+!s100 @SkHE;Y3dEVn_]z2U@fWM3
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1744598066
+!i10b 1
+Z9 !s108 1744598065.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte01/contador_Nbit/2__src/contador_Nbit.vhd|
+Z11 !s107 C:/Users/carol/Desktop/ES575/parte01/contador_Nbit/2__src/contador_Nbit.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Arlt
+R2
+R3
+R4
+DEx4 work 13 contador_nbit 0 22 VT<EgeM56m5EGN]mD8gmG0
+l23
+L21
+V57XRE9G1Pf4OW`<2F20am1
+!s100 oPY_^IiT;kUhk5e;m2Z0a2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etb_contador_nbit
+Z14 w1744600240
+R3
+R4
+R0
+Z15 8C:/Users/carol/Desktop/ES575/parte01/contador_Nbit/3__sim/tb_contador_Nbit.vhd
+Z16 FC:/Users/carol/Desktop/ES575/parte01/contador_Nbit/3__sim/tb_contador_Nbit.vhd
+l0
+L6
+V5L[DNEfCkI1PB8]=FlC7[3
+!s100 =@fUAAze7C7K2[Cg]6bIR1
+R7
+32
+Z17 !s110 1744600249
+!i10b 1
+Z18 !s108 1744600249.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte01/contador_Nbit/3__sim/tb_contador_Nbit.vhd|
+Z20 !s107 C:/Users/carol/Desktop/ES575/parte01/contador_Nbit/3__sim/tb_contador_Nbit.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R3
+R4
+Z21 DEx4 work 16 tb_contador_nbit 0 22 5L[DNEfCkI1PB8]=FlC7[3
+l32
+L11
+V5<1UA=OIS4>C__67[UJLS2
+!s100 KX`Ua^P^_R19n^i]UPhdW3
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13

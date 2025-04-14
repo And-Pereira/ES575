@@ -44,44 +44,43 @@ BEGIN
     process
     begin
         -- Test Case 0: 
-
-        X20 <= '0';
-        wait for 10 ns;
-
         X10 <= '1';
 	wait for 10 ns;
 	X10 <= '0';
 	wait for 10 ns;
+
+        X20 <= '0';
+        wait for 10 ns;
         assert (Y0 = "00000000") report "Test Case 0 Failed" severity error;
 
         -- Test Case 1: 
-        X20 <= '1';
-        wait for 10 ns;
-
         X10 <= '1';
 	wait for 10 ns;
 	X10 <= '0';
 	wait for 10 ns;
+
+        X20 <= '1';
+        wait for 10 ns;
         assert (Y0 = "00000001") report "Test Case 1 Failed" severity error;
 
         -- Test Case 2: 
-        X20 <= '1';
-        wait for 10 ns;
-
         X10 <= '1';
 	wait for 10 ns;
 	X10 <= '0';
 	wait for 10 ns;
+
+        X20 <= '1';
+        wait for 10 ns;
         assert (Y0 = "00000010") report "Test Case 2 Failed" severity error;
 
         -- Test Case 3: 
-        X20 <= '0';
-        wait for 10 ns;
-
         X10 <= '1';
 	wait for 10 ns;
 	X10 <= '0';
 	wait for 10 ns;
+
+        X20 <= '0';
+        wait for 10 ns;
         assert (Y0 = "00000000") report "Test Case 3 Failed" severity error;
 
         
