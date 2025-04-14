@@ -11,7 +11,8 @@ ENTITY CONTADOR_NBIT IS
 
   );
   PORT (
-    Clk, reset_n : IN STD_LOGIC;
+    Clk, reset_n, enable : IN STD_LOGIC;
+    rollover : OUT STD_LOGIC;
     Q : OUT std_logic_vector(N-1 DOWNTO 0)
   );
 END ENTITY CONTADOR_NBIT;
@@ -26,9 +27,13 @@ PROCESS (Clk, reset_n )
     -- Falling edge
       IF (reset_n = '0' OR VALUE = valMax - 1) THEN
         VALUE <=(OTHERS => '0');
+        rollover <= '1';
       
       ELSIF falling_edge(Clk) THEN
-        VALUE <= VALUE + 1;
+        IF enable = '1' THEN
+          VALUE <= VALUE + 1;
+          rollover <= '0';
+        END IF;
 
       END IF;
     

@@ -1,6 +1,8 @@
 -- Library importing
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all; 
+use IEEE.numeric_std.all; 
 
 LIBRARY ATOMIC_COMPONENTS;
 USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
