@@ -66,6 +66,13 @@ PACKAGE ATOMIC_COMPONENTS IS
                 Qnot : OUT STD_LOGIC);
     END COMPONENT FLIP_FLOP_T;
 
+    COMPONENT FLIP_FLOP_D IS
+    PORT (
+        D, Clk : IN STD_LOGIC;
+        Q : OUT STD_LOGIC
+    );
+    END COMPONENT FLIP_FLOP_D;
+
     COMPONENT CONTADOR_NBIT IS
         GENERIC(
             N : natural :=4;
