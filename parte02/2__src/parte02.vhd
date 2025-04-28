@@ -11,8 +11,10 @@ USE SUB_SYSTEMS.SUB_SYSTEMS.ALL;
 ENTITY PARTE02 IS
 	PORT(
 		SW: IN std_logic_vector(7 DOWNTO 0); --Entrada A
-		KEY: IN std_logic_vector(1 DOWNTO 0); -- Reset e Clock
-		LED: OUT std_logic;
+		KEY0: IN std_logic; -- Reset
+        	KEY1: IN std_logic; -- Clock
+		LEDR: OUT std_logic_vector(7 DOWNTO 0);
+		LEDG: OUT std_logic_vector(8 DOWNTO 8)
 	
 	);
 	
@@ -21,52 +23,52 @@ END ENTITY PARTE02;
 
 ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
 
-    SIGNAL rollovers: Std_logic_vector(2 DOWNTO 0);
-    SIGNAL CONTS: std_logic_vector(11 DOWNTO 0);
+    SIGNAL A: Std_logic_vector(7 DOWNTO 0);
+    SIGNAL S1: std_logic_vector(7 DOWNTO 0);
+    SIGNAL S2: std_logic_vector(7 DOWNTO 0);
+    SIGNAL COUT: STD_LOGIC_VECTOR (0 DOWNTO 0);
 
 
 BEGIN
+
     -- Porting all components
-    CONT_0: CONTADOR_NBIT
-        GENERIC MAP(
-            4, 10
-        )
+    FFD_A: FLIP_FLOP_D
+	GENERIC MAP(7)
         PORT MAP(
-            CLOCK_50, SW0, SW1,
-            rollovers(0),
-            CONTS(3 DOWNTO 0)
+		KEY1,
+		KEY0,
+            	SW,
+            	A
         );
 
-    CONT_1: CONTADOR_NBIT
-        GENERIC MAP(
-            4, 10
-        )
+    SUM: FULL_ADDER
+ 	GENERIC MAP(8)  
+  	PORT MAP(
+    		A, S2,
+    		'0',
+    		S1,
+    		COUT(0)
+    
+  	);
+
+    FFD_S: FLIP_FLOP_D
+	GENERIC MAP(7)
         PORT MAP(
-            CLOCK_50, SW0, rollovers(0),
-            rollovers(1),
-            CONTS(7 DOWNTO 4)
+		KEY1,
+		KEY0,
+            	S1,
+            	S2
         );
 
-    CONT_2: CONTADOR_NBIT
-        GENERIC MAP(
-            4, 10
-        )
+    FFD_COUT: FLIP_FLOP_D
+	GENERIC MAP(0)
         PORT MAP(
-            CLOCK_50, SW0, rollovers(1),
-            rollovers(2),
-            CONTS(11 DOWNTO 8)
+		KEY1,
+		KEY0,
+            	COUT,
+            	LEDG
         );
 
-  
-    -- Displays to 7-seg  
-    HEX0_CONV_4_TO_7_HEX: CONV_4_TO_7_HEX
-    	PORT MAP (CONTS(3 DOWNTO 0), HEX0);
-
-    HEX1_CONV_4_TO_7_HEX: CONV_4_TO_7_HEX
-    	PORT MAP (CONTS(7 DOWNTO 4), HEX1);
-
-    HEX2_CONV_4_TO_7_HEX: CONV_4_TO_7_HEX
-    	PORT MAP (CONTS(11 DOWNTO 8), HEX2);
-
+	LEDR <= S2;
 
 END ARCHITECTURE ARCH_PARTE02;

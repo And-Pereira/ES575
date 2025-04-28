@@ -66,16 +66,22 @@ PACKAGE ATOMIC_COMPONENTS IS
                 Qnot : OUT STD_LOGIC);
     END COMPONENT FLIP_FLOP_T;
 
-    COMPONENT CONTADOR_NBIT IS
-    GENERIC(
-        N : natural :=4;
-        valMax : natural := 10
-
-    );
+    COMPONENT FLIP_FLOP_D IS
     PORT (
-        Clk, reset_n, enable : IN STD_LOGIC;
-        rollover : OUT STD_LOGIC;
-        Q : OUT std_logic_vector(N-1 DOWNTO 0)
+        D, Clk : IN STD_LOGIC;
+        Q : OUT STD_LOGIC
     );
-    END COMPONENT CONTADOR_NBIT;
+    END COMPONENT FLIP_FLOP_D;
+
+    COMPONENT CONTADOR_NBIT IS
+        GENERIC(
+            N : natural :=4;
+            valMax : natural := 10
+        );
+        PORT (
+            Clk, reset_n, enable : IN STD_LOGIC;
+            rollover : OUT STD_LOGIC;
+            Q : OUT std_logic_vector(N-1 DOWNTO 0)
+        );
+        END COMPONENT CONTADOR_NBIT;
 END PACKAGE ATOMIC_COMPONENTS;

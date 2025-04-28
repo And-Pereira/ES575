@@ -1,75 +1,80 @@
 m255
 K3
+z0
 13
 cModel Technology
 Z0 dC:\Users\aluno\Documents\ES575\lab04\parte01\flip_flop_d
 Eflip_flop_d
-Z1 w1743462991
-Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z4 dC:\Users\aluno\Documents\ES575\lab04\parte01\flip_flop_d
-Z5 8C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/2__src/flip_flop_d.vhd
-Z6 FC:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/2__src/flip_flop_d.vhd
+Z1 w1745811008
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d
+Z5 8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd
+Z6 FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd
 l0
 L6
-Vhg7zCLZ;RD4i5UTMWh^I?0
-Z7 OV;C;10.1d;51
+VQOGVO4DzE^f<66kBVAUgG1
+!s100 LF81_M<535VLQ0`on>Q;A0
+Z7 OV;C;10.5b;63
 32
-Z8 !s108 1743463071.350000
-Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/2__src/flip_flop_d.vhd|
-Z10 !s107 C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/2__src/flip_flop_d.vhd|
-Z11 o-work work -2002 -explicit -O0
-Z12 tExplicit 1
-!s100 ]D@>AQ1VNB6<NJ>NR_HGT2
+Z8 !s110 1745811019
 !i10b 1
+Z9 !s108 1745811019.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd|
+Z11 !s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
 Abehavior
 R2
 R3
-DEx4 work 11 flip_flop_d 0 22 hg7zCLZ;RD4i5UTMWh^I?0
-l16
-L15
-Vh[IUjXbCclbTkhM:51nkG1
+Z14 DEx4 work 11 flip_flop_d 0 22 QOGVO4DzE^f<66kBVAUgG1
+l22
+L21
+Z15 VF1b5gRN0mZeNdGNg6nA5b1
+Z16 !s100 O3bUIQ`X2QNFM=C[6K_cY3
 R7
 32
 R8
+!i10b 1
 R9
 R10
 R11
+!i113 1
 R12
-!s100 <FhE4<f<hco6:LbH<72:O0
-!i10b 1
+R13
 Etb_flip_flop_d
-Z13 w1743463064
-R2
-R3
-R4
-Z14 8C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/3__sim/tb_flip_flop_d.vhd
-Z15 FC:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/3__sim/tb_flip_flop_d.vhd
+Z17 w1743463064
+Z18 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z19 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R0
+Z20 8C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/3__sim/tb_flip_flop_d.vhd
+Z21 FC:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/3__sim/tb_flip_flop_d.vhd
 l0
 L6
 VS^8e[8dDzN0VQ:nk^0l0>2
 !s100 JBX>>Af7dbb?SLlRYhUNN2
-R7
+Z22 OV;C;10.1d;51
 32
 !i10b 1
-Z16 !s108 1743463071.435000
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/3__sim/tb_flip_flop_d.vhd|
-Z18 !s107 C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/3__sim/tb_flip_flop_d.vhd|
-R11
-R12
+Z23 !s108 1743463071.435000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/3__sim/tb_flip_flop_d.vhd|
+Z25 !s107 C:/Users/aluno/Documents/ES575/lab04/parte01/flip_flop_d/3__sim/tb_flip_flop_d.vhd|
+Z26 o-work work -2002 -explicit -O0
+Z27 tExplicit 1
 Abehavioral
-R2
-R3
-Z19 DEx4 work 14 tb_flip_flop_d 0 22 S^8e[8dDzN0VQ:nk^0l0>2
+R18
+R19
+DEx4 work 14 tb_flip_flop_d 0 22 S^8e[8dDzN0VQ:nk^0l0>2
 l27
 L11
 VWmU?393VVIVn@oEXe:AIH3
 !s100 2E<mn`US:hi;Q>OO`5`941
-R7
+R22
 32
 !i10b 1
-R16
-R17
-R18
-R11
-R12
+R23
+R24
+R25
+R26
+R27
