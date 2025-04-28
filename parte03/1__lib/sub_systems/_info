@@ -1,0 +1,66 @@
+m255
+K3
+z0
+13
+cModel Technology
+dC:\Users\aluno\Documents\ES575\lab06\parte02\1__lib
+Efull_adder
+Z0 w1745804509
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/carol/Desktop/ES575/parte02/1__lib
+Z4 8C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/full_adder/2__src/full_adder.vhd
+Z5 FC:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/full_adder/2__src/full_adder.vhd
+l0
+L6
+VO;8]RAOKXbF64:=]6lH:o1
+!s100 m<]HK8QZdae7TNB@`JWdn2
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1745806025
+!i10b 1
+Z8 !s108 1745806025.000000
+Z9 !s90 -reportprogress|300|-work|sub_systems|C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/full_adder/2__src/full_adder.vhd|
+Z10 !s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/full_adder/2__src/full_adder.vhd|
+!i113 1
+Z11 o-work sub_systems
+Z12 tExplicit 1 CvgOpt 0
+Aarch_full_adder
+R1
+R2
+DEx4 work 10 full_adder 0 22 O;8]RAOKXbF64:=]6lH:o1
+l28
+L23
+Vm3fAf=gESiiV9oD1nm^1L2
+!s100 ?RTIkC:WK2HSWd35^D6dK3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Psub_systems
+R1
+R2
+w1745805956
+R3
+8C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/pkg_sub_systems.vhd
+FC:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/pkg_sub_systems.vhd
+l0
+L6
+V^l59:CF@>GPXV^bTmbYHb1
+!s100 9A5>=YVCEoclPOVGg7WP[1
+R6
+32
+!s110 1745806057
+!i10b 1
+!s108 1745806057.000000
+!s90 -reportprogress|300|-work|sub_systems|C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/pkg_sub_systems.vhd|
+!s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/pkg_sub_systems.vhd|
+!i113 1
+R11
+R12
