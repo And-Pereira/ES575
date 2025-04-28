@@ -21,6 +21,20 @@ PACKAGE SUB_SYSTEMS IS
   );
   END COMPONENT FULL_ADDER; 
 
+  -- full adder A+B= SUM
+  COMPONENT MULTIPLIER IS
+    GENERIC(
+      N : natural :=4
+      
+    );
+    
+    PORT (
+      A, B: IN std_logic_vector(N-1 DOWNTO 0);
+      P : OUT std_logic_vector(2*N-1 DOWNTO 0)
+      
+    );
+  END COMPONENT MULTIPLIER; 
+
 
 
 
