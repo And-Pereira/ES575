@@ -5,12 +5,14 @@ USE IEEE.std_logic_1164.all;
 LIBRARY ATOMIC_COMPONENTS;
 USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
 
+LIBRARY SUB_SYSTEMS;
+USE SUB_SYSTEMS.SUB_SYSTEMS.ALL;
+
 ENTITY PARTE02 IS
 	PORT(
-		SW0: IN std_logic; -- Reset
-		SW1: IN std_logic; -- Enable
-		CLOCK_50: IN std_logic;
-		HEX0, HEX1, HEX2: OUT std_logic_vector(6 DOWNTO 0) -- Contador
+		SW: IN std_logic_vector(7 DOWNTO 0); --Entrada A
+		KEY: IN std_logic_vector(1 DOWNTO 0); -- Reset e Clock
+		LED: OUT std_logic;
 	
 	);
 	
