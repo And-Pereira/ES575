@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\aluno\Documents\ES575\lab03\parte02\1__lib\atomic_components\circuitA
+Ecircuitb
+Z0 w1742857825
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z3 dC:\Users\aluno\Documents\ES575\lab03\parte02\1__lib\atomic_components\circuitB
+Z4 8C:/Users/aluno/Documents/ES575/lab03/parte02/1__lib/atomic_components/circuitB/2__src/circuitB.vhd
+Z5 FC:/Users/aluno/Documents/ES575/lab03/parte02/1__lib/atomic_components/circuitB/2__src/circuitB.vhd
+l0
+L6
+V3mg2iF`FJD[0K=3eT35_52
+Z6 OV;C;10.1d;51
+32
+Z7 !s108 1742857833.552000
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/aluno/Documents/ES575/lab03/parte02/1__lib/atomic_components/circuitB/2__src/circuitB.vhd|
+Z9 !s107 C:/Users/aluno/Documents/ES575/lab03/parte02/1__lib/atomic_components/circuitB/2__src/circuitB.vhd|
+Z10 o-work work -2002 -explicit -O0
+Z11 tExplicit 1
+!s100 X9`AJcGAL[haP`LZD8PU`3
+!i10b 1
+Aarch_circuitb
+R1
+R2
+DEx4 work 8 circuitb 0 22 3mg2iF`FJD[0K=3eT35_52
+l21
+L18
+Vo>Yi[bHmd7kRDan:QLP?P2
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 dT?N;<8VjRGo<[Uc7Agid0
+!i10b 1
+Etb_circuitb
+Z12 w1742857857
+R1
+R2
+R3
+Z13 8C:/Users/aluno/Documents/ES575/lab03/parte02/1__lib/atomic_components/circuitB/3__sim/tb_circuitB.vhd
+Z14 FC:/Users/aluno/Documents/ES575/lab03/parte02/1__lib/atomic_components/circuitB/3__sim/tb_circuitB.vhd
+l0
+L6
+V>L?EKYB9O7cHjhO9^WfRK2
+!s100 9T23hL3K7Q6jUQ=k``EZf1
+R6
+32
+!i10b 1
+Z15 !s108 1742857861.144000
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/aluno/Documents/ES575/lab03/parte02/1__lib/atomic_components/circuitB/3__sim/tb_circuitB.vhd|
+Z17 !s107 C:/Users/aluno/Documents/ES575/lab03/parte02/1__lib/atomic_components/circuitB/3__sim/tb_circuitB.vhd|
+R10
+R11
+Abehavioral
+R1
+R2
+DEx4 work 11 tb_circuitb 0 22 >L?EKYB9O7cHjhO9^WfRK2
+l27
+L11
+VHJf>eMKY19dV0aNjmlYhg1
+!s100 Hk?bYZ^9O;]cO5i@EOA2k2
+R6
+32
+!i10b 1
+R15
+R16
+R17
+R10
+R11
