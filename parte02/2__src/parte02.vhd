@@ -5,70 +5,83 @@ USE IEEE.std_logic_1164.all;
 LIBRARY ATOMIC_COMPONENTS;
 USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
 
-LIBRARY SUB_SYSTEMS;
-USE SUB_SYSTEMS.SUB_SYSTEMS.ALL;
-
 ENTITY PARTE02 IS
 	PORT(
-		SW: IN std_logic_vector(7 DOWNTO 0); --Entrada A
-		KEY0: IN std_logic; -- Reset
-        	KEY1: IN std_logic; -- Clock
-		LEDR: OUT std_logic_vector(7 DOWNTO 0);
-		LEDG: OUT std_logic_vector(8 DOWNTO 8)
-	
+	X: IN STD_LOGIC;
+	RST: IN STD_LOGIC;
+	CLK: IN STD_LOGIC;
+	Y: OUT STD_LOGIC  
 	);
 	
 END ENTITY PARTE02;
 
-
 ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
 
-    SIGNAL A: Std_logic_vector(7 DOWNTO 0);
-    SIGNAL S1: std_logic_vector(7 DOWNTO 0);
-    SIGNAL S2: std_logic_vector(7 DOWNTO 0);
-    SIGNAL COUT: STD_LOGIC_VECTOR (0 DOWNTO 0);
-
+	TYPE STATE_TYPES IS (A, B, C, D, E, F, G, H, I);
+	SIGNAL Y_Q, Y_D: STATE_TYPES; -- Y_Q: FUTURE, Y_D: CURRENT
 
 BEGIN
 
-    -- Porting all components
-    FFD_A: FLIP_FLOP_D
-	GENERIC MAP(7)
-        PORT MAP(
-		KEY1,
-		KEY0,
-            	SW,
-            	A
-        );
+	-- State's table
+	PROCESS(X, Y_D)
+	BEGIN
+		CASE Y_D IS
+			-- Begining Node
+			WHEN A=>
+				IF (X = '0') THEN Y_Q <= B;
+				ELSE Y_Q <= F;
+				END IF;
 
-    SUM: FULL_ADDER
- 	GENERIC MAP(8)  
-  	PORT MAP(
-    		A, S2,
-    		'0',
-    		S1,
-    		COUT(0)
-    
-  	);
+			-- 0 Branch
+			WHEN B=>
+				IF (X = '0') THEN Y_Q <= C;
+				ELSE Y_Q <= F;
+				END IF;
+			WHEN C=>
+				IF (X = '0') THEN Y_Q <= D;
+				ELSE Y_Q <= F;
+				END IF;
+			WHEN D=>
+				IF (X = '0') THEN Y_Q <= E;
+				ELSE Y_Q <= F;
+				END IF;
+			WHEN E=>
+				IF (X = '0') THEN Y_Q <= E;
+				ELSE Y_Q <= F;
+				END IF;
 
-    FFD_S: FLIP_FLOP_D
-	GENERIC MAP(7)
-        PORT MAP(
-		KEY1,
-		KEY0,
-            	S1,
-            	S2
-        );
+			-- 1 Branch
+			WHEN F=>
+				IF (X = '1') THEN Y_Q <= G;
+				ELSE Y_Q <= B;
+				END IF;
+			WHEN G=>
+				IF (X = '1') THEN Y_Q <= H;
+				ELSE Y_Q <= B;
+				END IF;
+			WHEN H=>
+				IF (X = '1') THEN Y_Q <= I;
+				ELSE Y_Q <= B;
+				END IF;
+			WHEN I=>
+				IF (X = '1') THEN Y_Q <= I;
+				ELSE Y_Q <= B;
+				END IF;
 
-    FFD_COUT: FLIP_FLOP_D
-	GENERIC MAP(0)
-        PORT MAP(
-		KEY1,
-		KEY0,
-            	COUT,
-            	LEDG
-        );
+		END CASE;
+	END PROCESS;
 
-	LEDR <= S2;
+	-- How FFs will behave
+	PROCESS(CLK, RST)
+	BEGIN
+		IF(RST = '1') THEN
+			Y_D <= A;
+		ELSIF (rising_edge(CLK)) THEN
+			Y_D <= Y_Q;
+		END IF;
+	END PROCESS;
+
+	-- Output definition
+	Y <= '1' WHEN (Y_D = E OR Y_D = I) ELSE '0';
 
 END ARCHITECTURE ARCH_PARTE02;
