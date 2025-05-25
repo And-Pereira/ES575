@@ -6,58 +6,116 @@ LIBRARY ATOMIC_COMPONENTS;
 USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
 
 ENTITY PARTE01 IS
-  PORT(
-    X: IN STD_LOGIC;
+	PORT(
     RST: IN STD_LOGIC;
-    CLK: IN STD_LOGIC;
-    Y: OUT STD_LOGIC  
-  );
-  
+    CLOCK_50: IN STD_LOGIC;
+    Y_P_Vd, Y_P_Am, Y_P_Vm: OUT STD_LOGIC;
+    Y_S_Vd, Y_S_Am, Y_S_Vm: OUT STD_LOGIC;
+    Vs: IN STD_LOGIC
+	);
+	
 END ENTITY PARTE01;
 
-
 ARCHITECTURE ARCH_PARTE01 OF PARTE01 IS
-  SIGNAL BIT_ESTADO: STD_LOGIC_VECTOR(8 DOWNTO 0);
-  SIGNAL ENTRADA_FF: STD_LOGIC_VECTOR(8 DOWNTO 0);
 
+	TYPE STATE_TYPES IS (Vd_Vm, Am_Vm, Vm_Vd, Vm_Am);
+	SIGNAL Y_Q, Y_D: STATE_TYPES; -- Y_Q: FUTURE, Y_D: CURRENT
+  SIGNAL Tmin, Tmax, Tam: std_logic;
+  SIGNAL EN_Tam, EN_Tmin, EN_Tmax: std_logic;
+
+BEGIN
+
+	-- State's table
+	PROCESS(Tmin, Tmax, Tam, Vs, Y_D)
+	BEGIN
+		CASE Y_D IS
+			-- Case 1
+			WHEN Vd_Vm=>
+				IF (Tmin = '1' and Vs = '1') THEN Y_Q <= Am_Vm;
+				ELSE Y_Q <= Vd_Vm;
+				END IF;
+
+			-- Case 2
+			WHEN Am_Vm=>
+				IF (Tam = '1') THEN Y_Q <= Vm_Vd;
+				ELSE Y_Q <= Am_Vm;
+				END IF;
+
+      -- Case 3
+			WHEN Vm_Vd=>
+				IF (Tmax = '1' or Vs = '0') THEN Y_Q <= Vm_Am;
+				ELSE Y_Q <= Vm_Vd;
+				END IF;
+
+      -- Case 4
+			WHEN Vm_Am=>
+				IF (Tam = '1') THEN Y_Q <= Vd_Vm;
+				ELSE Y_Q <= Vm_Am;
+				END IF;
+
+		END CASE;
+	END PROCESS;
+
+	-- How FFs will behave
+	PROCESS(CLOCK_50, RST)
+	BEGIN
+		IF(RST = '1') THEN
+			Y_D <= Vd_Vm;
+
+		ELSIF (rising_edge(CLOCK_50)) THEN
+			Y_D <= Y_Q;
+
+		END IF;
+	END PROCESS;
+
+  -- Input definition
+
+  EN_Tam <= (Tmin = '1' and Vs = '1') OR (Tmax = '1' or Vs = '0');
+  -- For AM T = 1s
+  CONT_AM: TEMPORIZADOR_NBIT
+    GENERIC MAP(
+      4, 1
+
+    )
+    PORT MAP(
+      CLOCK_50, RST, EN_Tam, 
+      Tam
+
+    );
+
+  EN_Tmin <= Tam;
+  -- For AM T = 3s
+  CONT_MIN: TEMPORIZADOR_NBIT
+    GENERIC MAP(
+      4, 3
+
+    )
+    PORT MAP(
+      CLOCK_50, RST, EN_Tmin, 
+      Tmin
+
+    );
+
+  EN_Tmax <= Tam;
+  -- For MAX T = 5s
+  CONT_MAX: TEMPORIZADOR_NBIT
+    GENERIC MAP(
+      4, 5
+
+    )
+    PORT MAP(
+      CLOCK_50, RST, EN_Tmax, 
+      Tmax
+
+    );
   
-  BEGIN
-    
-    GEN_FFS: FOR i in 0 TO 8 GENERATE
-      FFD_A: FLIP_FLOP_D
-        GENERIC MAP(0)
-          PORT MAP(
-            CLK,
-            RST,
-            ENTRADA_FF(i DOWNTO i),
-            BIT_ESTADO(i DOWNTO i)
-        
-          );
-          
-    END GENERATE;
-    
-    --A 
-    ENTRADA_FF(0) <= '1';
-    --B
-    ENTRADA_FF(1) <= NOT(X) AND(NOT(BIT_ESTADO(0)) OR BIT_ESTADO(5) OR BIT_ESTADO(6) OR BIT_ESTADO(7) OR BIT_ESTADO(8));
-    --C
-    ENTRADA_FF(2) <= NOT(X) AND BIT_ESTADO(1);
-    --D
-    ENTRADA_FF(3) <= NOT(X) AND BIT_ESTADO(2);
-    --E
-    ENTRADA_FF(4) <= NOT(X) AND (BIT_ESTADO(3) OR BIT_ESTADO(4));
-    --F
-    ENTRADA_FF(5) <= X AND(NOT(BIT_ESTADO(0)) OR BIT_ESTADO(1) OR BIT_ESTADO(2) OR BIT_ESTADO(3) OR BIT_ESTADO(4));
-    --G
-    ENTRADA_FF(6) <= X AND BIT_ESTADO(5);
-    --H
-    ENTRADA_FF(7) <= X AND BIT_ESTADO(6);
-    --I
-    ENTRADA_FF(8) <= X AND (BIT_ESTADO(7) OR BIT_ESTADO(8));
-    
-    Y <= BIT_ESTADO(4) OR BIT_ESTADO(8);
-    
-      
 
+	-- Output definition
+  Y_P_Vd <= '1' WHEN (Y_D = Vd_Vm) ELSE '0';
+  Y_P_Am <= '1' WHEN (Y_D = Am_Vm) ELSE '0';
+  Y_P_Vm <= '1' WHEN (Y_D = Vm_Vd OR Y_D = Vm_Am) ELSE '0';
+  Y_S_Vd <= '1' WHEN (Y_D = Vm_Vd) ELSE '0';
+  Y_S_Am <= '1' WHEN (Y_D = Vm_Am) ELSE '0';
+  Y_S_Vm <= '1' WHEN (Y_D = Vd_Vm OR Y_D = Am_Vm) ELSE '0';
 
 END ARCHITECTURE ARCH_PARTE01;

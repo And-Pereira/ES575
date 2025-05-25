@@ -41,6 +41,8 @@ PACKAGE ATOMIC_COMPONENTS IS
     END COMPONENT COMPARATOR_NBIT;
 
 
+
+
     -- Entity Definition
     COMPONENT CONV_4_TO_7 IS
         PORT(
@@ -89,4 +91,15 @@ PACKAGE ATOMIC_COMPONENTS IS
             Q : OUT std_logic_vector(N-1 DOWNTO 0)
         );
         END COMPONENT CONTADOR_NBIT;
+
+    COMPONENT TEMPORIZADOR_NBIT IS
+        GENERIC(
+            N : natural :=4;
+            valMax : natural := 10
+        );
+        PORT (
+            Clk, reset_n, enable : IN STD_LOGIC;
+            itsover : OUT STD_LOGIC
+        );
+        END COMPONENT TEMPORIZADOR_NBIT;
 END PACKAGE ATOMIC_COMPONENTS;
