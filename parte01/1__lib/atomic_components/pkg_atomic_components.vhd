@@ -102,4 +102,15 @@ PACKAGE ATOMIC_COMPONENTS IS
             itsover : OUT STD_LOGIC
         );
         END COMPONENT TEMPORIZADOR_NBIT;
+
+    COMPONENT RAM_32x8 IS
+        PORT(
+            ADD: IN STD_LOGIC_VECTOR (3 DOWNTO 0); -- Memory Address
+            DATA_IN: IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- Input Data
+            WR: IN STD_LOGIC; -- Control signal
+            CLK: IN STD_LOGIC; -- Clock signal
+            DATA_OUT: OUT STD_LOGIC_VECTOR (7 DOWNTO 0) -- Output Data
+        );
+    END COMPONENT RAM_32x8;
+    
 END PACKAGE ATOMIC_COMPONENTS;
