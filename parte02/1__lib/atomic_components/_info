@@ -11,45 +11,45 @@ Z0 dC:/Users/carol/Desktop/ES575/parte01/1__lib
 Patomic_components
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-w1748213683
-dC:/Users/carol/Desktop/ES575/parte02
-8C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/pkg_atomic_components.vhd
-FC:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/pkg_atomic_components.vhd
+w1748230765
+Z3 dC:/Users/carol/Desktop/ES575/parte02/1__lib
+8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/pkg_atomic_components.vhd
+FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/pkg_atomic_components.vhd
 l0
 L6
-V]_m9^0=mV_fbN]WCd4oeg2
-!s100 <4]EmF`C8Z`zD]M]l=jEl1
-Z3 OV;C;10.5b;63
+Vzh>H6S_S>;?jkJX1@2TO@3
+!s100 b9CaYSAC^::kagl4ILSF43
+Z4 OV;C;10.5b;63
 32
-!s110 1748230630
+!s110 1748230836
 !i10b 1
-!s108 1748230630.000000
-!s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/pkg_atomic_components.vhd|
-!s107 C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/pkg_atomic_components.vhd|
+!s108 1748230836.000000
+!s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/pkg_atomic_components.vhd|
+!s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/pkg_atomic_components.vhd|
 !i113 1
-Z4 o-work atomic_components
-Z5 tExplicit 1 CvgOpt 0
+Z5 o-work atomic_components
+Z6 tExplicit 1 CvgOpt 0
 Ebin2bcd
-Z6 w1748229633
+Z7 w1748229633
 R1
 R2
-Z7 dC:/Users/carol/Desktop/ES575/parte02/1__lib
+R3
 Z8 8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/bin2bcd/2__src/bin2bcd.vhd
 Z9 FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/bin2bcd/2__src/bin2bcd.vhd
 l0
 L6
 VgSgKRg7QG>N=@;Ml;mh;L3
 !s100 A4GYm25zaLL9D22@C^D463
-R3
+R4
 32
-Z10 !s110 1748229791
+Z10 !s110 1748230811
 !i10b 1
-Z11 !s108 1748229791.000000
+Z11 !s108 1748230811.000000
 Z12 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/bin2bcd/2__src/bin2bcd.vhd|
 Z13 !s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/bin2bcd/2__src/bin2bcd.vhd|
 !i113 1
-R4
 R5
+R6
 Aarch_bin2bcd
 R1
 R2
@@ -58,7 +58,7 @@ l19
 L16
 VV91@RLlo9V6z?jk;aLcFQ1
 !s100 B@MCnOLFiI2f3RooHSg>H2
-R3
+R4
 32
 R10
 !i10b 1
@@ -66,8 +66,8 @@ R11
 R12
 R13
 !i113 1
-R4
 R5
+R6
 Econv_4_to_7
 Z14 w1746497688
 R1
@@ -79,7 +79,7 @@ l0
 L6
 Vh_[Y7ez=E8>18QMJCXW4n3
 !s100 =AXM5^`7Z_hmh`76=IJS=1
-R3
+R4
 32
 Z17 !s110 1747599377
 !i10b 1
@@ -87,8 +87,8 @@ Z18 !s108 1747599377.000000
 Z19 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/conv_4_to_7/2__src/conv_4_to_7.vhd|
 Z20 !s107 C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/conv_4_to_7/2__src/conv_4_to_7.vhd|
 !i113 1
-R4
 R5
+R6
 Aarch_conv_4_to_7
 R1
 R2
@@ -97,7 +97,7 @@ l18
 L15
 V[Q@<L_S23_V?O_UickVL`2
 !s100 8hfPoo5J^Q]He4n0b4Yn^0
-R3
+R4
 32
 R17
 !i10b 1
@@ -105,8 +105,8 @@ R18
 R19
 R20
 !i113 1
-R4
 R5
+R6
 Econv_4_to_7_hex
 R14
 R1
@@ -118,7 +118,7 @@ l0
 L6
 V59lf6eKnOGKPW:T^:62h?0
 !s100 PeMoVbTTg3]5jL:V[NNY41
-R3
+R4
 32
 Z23 !s110 1747599370
 !i10b 1
@@ -126,8 +126,8 @@ Z24 !s108 1747599370.000000
 Z25 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/conv_4_to_7_hex/2__src/conv_4_to_7_hex.vhd|
 Z26 !s107 C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/conv_4_to_7_hex/2__src/conv_4_to_7_hex.vhd|
 !i113 1
-R4
 R5
+R6
 Aarch_conv_4_to_7_hex
 R1
 R2
@@ -136,7 +136,7 @@ l18
 L15
 V7GW74]SK7ZE?Z01L3_AK;3
 !s100 gCJHSzRCk1AnoeQY8P4eb3
-R3
+R4
 32
 R23
 !i10b 1
@@ -144,8 +144,8 @@ R24
 R25
 R26
 !i113 1
-R4
 R5
+R6
 Eflip_flop_d
 R14
 R1
@@ -157,7 +157,7 @@ l0
 L6
 V0;T^KdLJQD4=>;@c8f2Vc3
 !s100 LF81_M<535VLQ0`on>Q;A0
-R3
+R4
 32
 Z29 !s110 1747599357
 !i10b 1
@@ -165,8 +165,8 @@ Z30 !s108 1747599357.000000
 Z31 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd|
 Z32 !s107 C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd|
 !i113 1
-R4
 R5
+R6
 Abehavior
 R1
 R2
@@ -175,7 +175,7 @@ l22
 L21
 VMnZikQEobmLQA3Ro0Z9f92
 !s100 O3bUIQ`X2QNFM=C[6K_cY3
-R3
+R4
 32
 R29
 !i10b 1
@@ -183,8 +183,8 @@ R30
 R31
 R32
 !i113 1
-R4
 R5
+R6
 Eram_32x8
 Z33 w1748211819
 Z34 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
@@ -197,7 +197,7 @@ l0
 L7
 V5IG4Wm>_8TZag9e?<@GO^0
 !s100 ?:=OPD2_Lio<QJXP4lnlj2
-R3
+R4
 32
 Z37 !s110 1748217496
 !i10b 1
@@ -205,8 +205,8 @@ Z38 !s108 1748217496.000000
 Z39 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/ram_32x8/2__src/ram_32x8.vhd|
 Z40 !s107 C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/ram_32x8/2__src/ram_32x8.vhd|
 !i113 1
-R4
 R5
+R6
 Abehavioral
 R34
 R1
@@ -216,7 +216,7 @@ l31
 L17
 V1A^^a<JzE=dO4D78]iLi^2
 !s100 eL4PEe;:7C8O=jh@97KoJ2
-R3
+R4
 32
 R37
 !i10b 1
@@ -224,8 +224,8 @@ R38
 R39
 R40
 !i113 1
-R4
 R5
+R6
 Etemporizador_nbit
 Z41 w1747598368
 R34
@@ -238,7 +238,7 @@ l0
 L7
 VB57oX]1RDd]lcMdXSTM@g3
 !s100 ?_Q@gNX0][Eo8XQ6431FY3
-R3
+R4
 32
 Z44 !s110 1747599322
 !i10b 1
@@ -246,8 +246,8 @@ Z45 !s108 1747599322.000000
 Z46 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/temporizador_Nbit/2__src/temporizador_Nbit.vhd|
 Z47 !s107 C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/temporizador_Nbit/2__src/temporizador_Nbit.vhd|
 !i113 1
-R4
 R5
+R6
 Arlt
 R34
 R1
@@ -257,7 +257,7 @@ l23
 L21
 VRF9QP9i;P^BkLoa:f4Eg92
 !s100 alB7WNfToB3;Q6`1d8H8N3
-R3
+R4
 32
 R44
 !i10b 1
@@ -265,5 +265,5 @@ R45
 R46
 R47
 !i113 1
-R4
 R5
+R6

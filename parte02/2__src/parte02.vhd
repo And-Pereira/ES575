@@ -30,7 +30,7 @@ ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
   SIGNAL TecE: STD_LOGIC_VECTOR(3 DOWNTO 0);
 
   SIGNAL ADD: STD_LOGIC_VECTOR(3 DOWNTO 0);
-  SIGNAL DATA_IN, Breg, Areg, M, G, Zreg, Dado, AddRes, SubRes: STD_LOGIC_VECTOR(7 DOWNTO 0);
+  SIGNAL DATA_IN, Breg, Areg, M, G, Zreg, Dado, AddRes, SubRes, ADD8: STD_LOGIC_VECTOR(7 DOWNTO 0);
   SIGNAL DATA_OUT: STD_LOGIC_VECTOR(7 DOWNTO 0);
   SIGNAL WR: STD_LOGIC_VECTOR(0 DOWNTO 0);
 
@@ -163,9 +163,11 @@ BEGIN
       
     );
 
+  ADD8 <= ("0000" & ADD);
+
   CONV2: BIN2BCD 
         PORT MAP(
-            ADD,
+            ADD8,
             BCD2
         
     );
