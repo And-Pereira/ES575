@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/carol/Desktop/ES575/parte02
 Eparte02
-Z1 w1748224008
+Z1 w1748230594
 Z2 DPx11 sub_systems 11 sub_systems 0 22 M0M:[CRV:2TFH>>HM5Cfh1
 Z3 DPx17 atomic_components 17 atomic_components 0 22 ]_m9^0=mV_fbN]WCd4oeg2
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
@@ -23,31 +23,31 @@ VN2;X7Of_gP]`Za]z_XYii0
 !s100 03L6bRNe:oh;`db4EOUSm1
 Z8 OV;C;10.5b;63
 32
-Z9 !s110 1748224969
+!s110 1748230640
 !i10b 1
-Z10 !s108 1748224969.000000
-Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
-Z12 !s107 C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
+!s108 1748230640.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
+!s107 C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
 !i113 1
-Z13 o-work work -2002 -explicit
-Z14 tExplicit 1 CvgOpt 0
+Z10 o-work work -2002 -explicit
+Z11 tExplicit 1 CvgOpt 0
 Aarch_parte02
 R2
 R3
 R4
 R5
-Z15 DEx4 work 7 parte02 0 22 N2;X7Of_gP]`Za]z_XYii0
+DEx4 work 7 parte02 0 22 N2;X7Of_gP]`Za]z_XYii0
 l37
 L25
-Z16 V8aV?F2i8S0_N`kOmBYSLA1
-Z17 !s100 _`Ig;<jf:=Hzl8WmI@hGk0
+V8aV?F2i8S0_N`kOmBYSLA1
+!s100 _`Ig;<jf:=Hzl8WmI@hGk0
 R8
 32
-R9
+!s110 1748224969
 !i10b 1
+!s108 1748224969.000000
+R9
+!s107 C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
+!i113 1
 R10
 R11
-R12
-!i113 1
-R13
-R14

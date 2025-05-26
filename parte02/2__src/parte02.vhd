@@ -34,6 +34,9 @@ ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
   SIGNAL DATA_OUT: STD_LOGIC_VECTOR(7 DOWNTO 0);
   SIGNAL WR: STD_LOGIC_VECTOR(0 DOWNTO 0);
 
+  SIGNAL BCD1, BCD2: STD_LOGIC_VECTOR(11 DOWNTO 0);
+
+
 BEGIN
   CLKZ <= KEY(0);
   CLKM <= KEY(1);
@@ -139,6 +142,46 @@ BEGIN
           CLKM,
           DATA_OUT
       );
+
+  CONV1: BIN2BCD 
+        PORT MAP(
+            DATA_OUT,
+            BCD1
+        
+    );
+
+  D7SEG0: CONV_4_TO_7_HEX
+      PORT MAP(
+        BCD1(3 DOWNTO 0),
+        HEX0
+      
+    );
+    D7SEG1: CONV_4_TO_7_HEX
+      PORT MAP(
+        BCD1(7 DOWNTO 4),
+        HEX1
+      
+    );
+
+  CONV2: BIN2BCD 
+        PORT MAP(
+            ADD,
+            BCD2
+        
+    );
+
+  D7SEG2: CONV_4_TO_7_HEX
+      PORT MAP(
+        BCD2(3 DOWNTO 0),
+        HEX6
+      
+    );
+    D7SEG3: CONV_4_TO_7_HEX
+      PORT MAP(
+        BCD2(7 DOWNTO 4),
+        HEX7
+      
+    );
   
   -- MUX Declaration
   G <= Areg WHEN (SelM1 = '0') ELSE Zreg;
