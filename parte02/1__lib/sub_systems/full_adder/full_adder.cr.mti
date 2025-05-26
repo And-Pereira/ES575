@@ -1,4 +1,4 @@
-C:/Users/carol/Desktop/ES575/parte01/full_adder/2__src/full_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/carol/Desktop/ES575/parte01/full_adder/2__src/full_adder.vhd
+C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/full_adder/2__src/full_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/full_adder/2__src/full_adder.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO

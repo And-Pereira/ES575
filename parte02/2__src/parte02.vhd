@@ -5,28 +5,34 @@ USE IEEE.std_logic_1164.all;
 LIBRARY ATOMIC_COMPONENTS;
 USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
 
-ENTITY PARTE01 IS
+LIBRARY SUB_SYSTEMS;
+USE SUB_SYSTEMS.SUB_SYSTEMS.ALL;
+
+ENTITY PARTE02 IS
 	PORT(
     KEY: IN STD_LOGIC_VECTOR(3 DOWNTO 0); -- CLKZ, CLKM, CLKR, ClearRegs
     SW: IN STD_LOGIC_VECTOR(17 DOWNTO 0); -- TecD, TecE, WrEn, SelM2, SelM1, SelRB, SelRA, AddSubR
-    HEX: OUT STD_LOGIC_VECTOR(1 DOWNTO 0); -- Data
-    HEX: OUT STD_LOGIC_VECTOR(7 DOWNTO 6); -- Address
-    LEDG: OUT STD_LOGIC_VECTOR(0); -- WrEn
+    HEX0: OUT STD_LOGIC_VECTOR(6 DOWNTO 0); -- Data
+    HEX1: OUT STD_LOGIC_VECTOR(6 DOWNTO 0); -- Data
+    HEX6: OUT STD_LOGIC_VECTOR(6 DOWNTO 0); -- Address
+    HEX7: OUT STD_LOGIC_VECTOR(6 DOWNTO 0); -- Address
+    LEDG: OUT STD_LOGIC_VECTOR(0 DOWNTO 0) -- WrEn
 
 	);
 	
-END ENTITY PARTE01;
+END ENTITY PARTE02;
 
-ARCHITECTURE ARCH_PARTE01 OF PARTE01 IS
+ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
 
-	SIGNAL CLKZ, CLKM, CLKR, ClearRegs, WrEn, SelM2, SelM1, SelRB, SelRA, AddSubR: STD_LOGIC;
+	SIGNAL CLKZ, CLKM, CLKR, ClearRegs, SelM2, SelM1, SelRB, SelRA, AddSubR: STD_LOGIC;
+  SIGNAL WrEn: STD_LOGIC_VECTOR(0 DOWNTO 0);
   SIGNAL TecD: STD_LOGIC_VECTOR(7 DOWNTO 0);
   SIGNAL TecE: STD_LOGIC_VECTOR(3 DOWNTO 0);
 
   SIGNAL ADD: STD_LOGIC_VECTOR(3 DOWNTO 0);
-  SIGNAL DATA_IN: STD_LOGIC_VECTOR(7 DOWNTO 0);
+  SIGNAL DATA_IN, Breg, Areg, M, G, Zreg, Dado, AddRes, SubRes: STD_LOGIC_VECTOR(7 DOWNTO 0);
   SIGNAL DATA_OUT: STD_LOGIC_VECTOR(7 DOWNTO 0);
-  SIGNAL WR: STD_LOGIC;
+  SIGNAL WR: STD_LOGIC_VECTOR(0 DOWNTO 0);
 
 BEGIN
   CLKZ <= KEY(0);
@@ -38,7 +44,7 @@ BEGIN
   TecD <= SW(7 DOWNTO 0);
   TecE <= SW(11 DOWNTO 8);
 
-  WrEn <= SW(12);
+  WrEn(0) <= SW(12);
 
   SelM2 <= SW(13);
   SelM1 <= SW(14);
@@ -46,62 +52,99 @@ BEGIN
   SelRA <= SW(16);
   AddSubR <= SW(17);
 
-  FF_END: FLIP_FLOP_D
+  -- Registers
+  RegB: FLIP_FLOP_D
     GENERIC MAP(
-        4
-    );
+        7
+    )
     PORT MAP(
         CLKR,
+        ClearRegs,
+        DATA_OUT,
+        Breg
+    );
+
+  RegA: FLIP_FLOP_D
+    GENERIC MAP(
+        7
+    )
+    PORT MAP(
+        CLKR,
+        ClearRegs,
+        DATA_OUT,
+        Areg
+    );
+
+  RegZ: FLIP_FLOP_D
+    GENERIC MAP(
+        7
+    )
+    PORT MAP(
+        CLKZ,
+        ClearRegs,
+        M,
+        Zreg
+    );
+
+  ENDB: FLIP_FLOP_D
+    GENERIC MAP(
+        3
+    )
+    PORT MAP(
+        CLKM,
         ClearRegs,
         TecE,
         ADD
     );
 
-  FF_ENT_DADO: FLIP_FLOP_D
+  DADB: FLIP_FLOP_D
     GENERIC MAP(
-        8
-    );
+        7
+    )
     PORT MAP(
-        CLKR,
+        CLKM,
         ClearRegs,
-        TecD,
+        Dado,
         DATA_IN
     );
 
-  FF_ENT_DADO: FLIP_FLOP_D
+  -- Arithmetic components
+  ADD_C: FULL_ADDER
     GENERIC MAP(
-        1
-    );
+      8
+    )
     PORT MAP(
-        CLKR,
-        ClearRegs,
-        WrEn,
-        WR
-    );
+      Breg, G,
+      '0',
+      AddRes
+    );   
 
+  -- Arithmetic components
+  SUB_C: RIPPLE_BORROWER_SUBTRACTOR
+    GENERIC MAP(
+      8
+    )
+    PORT MAP(
+      Breg, G,
+      '0',
+      SubRes
+    );   
 
-  RAM_16: RAM_32x8
-      PORT(
+  -- RAM
+  M9K: RAM_32x8
+      PORT MAP(
           ADD,
           DATA_IN,
-          WR,
+          WR(0),
           CLKM,
           DATA_OUT
       );
   
+  -- MUX Declaration
+  G <= Areg WHEN (SelM1 = '0') ELSE Zreg;
+  Dado <= Zreg WHEN (SelM2 ='0') ELSE TecD;
+  M <= AddRes WHEN (AddSubR = '0') ELSE SubRes;
 
-	-- State's table
-	PROCESS(CLKR, CLKM, CLKZ) BEGIN
-    
+  LEDG <= WR;
 
-
-
-  -- Output definition
-  Y_P_Vd <= '1' WHEN (Y_D = Vd_Vm) ELSE '0';
-  Y_P_Am <= '1' WHEN (Y_D = Am_Vm) ELSE '0';
-  Y_P_Vm <= '1' WHEN (Y_D = Vm_Vd OR Y_D = Vm_Am) ELSE '0';
-  Y_S_Vd <= '1' WHEN (Y_D = Vm_Vd) ELSE '0';
-  Y_S_Am <= '1' WHEN (Y_D = Vm_Am) ELSE '0';
-  Y_S_Vm <= '1' WHEN (Y_D = Vd_Vm OR Y_D = Am_Vm) ELSE '0';
-
-END ARCHITECTURE ARCH_PARTE01;
+END ARCHITECTURE ARCH_PARTE02;
