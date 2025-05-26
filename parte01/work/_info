@@ -1,0 +1,51 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/carol/Desktop/ES575/parte01
+Eparte01
+Z1 w1748216535
+Z2 DPx17 atomic_components 17 atomic_components 0 22 ]_m9^0=mV_fbN]WCd4oeg2
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/carol/Desktop/ES575/parte01/2__src/parte01.vhd
+Z6 FC:/Users/carol/Desktop/ES575/parte01/2__src/parte01.vhd
+l0
+L8
+V5B^3eR77g8jKMK4z?59nG1
+!s100 Ln?1]lW3:>GEMW2XBSmeX0
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1748217592
+!i10b 1
+Z9 !s108 1748217592.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte01/2__src/parte01.vhd|
+Z11 !s107 C:/Users/carol/Desktop/ES575/parte01/2__src/parte01.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Aarch_parte01
+R2
+R3
+R4
+Z14 DEx4 work 7 parte01 0 22 5B^3eR77g8jKMK4z?59nG1
+l34
+L22
+Z15 V6`==eG]2nY_6feGMjOOXk3
+Z16 !s100 GBoRBna:jzd;SN3b6gK:X0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
