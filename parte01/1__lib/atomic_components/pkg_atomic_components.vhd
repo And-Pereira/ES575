@@ -40,9 +40,6 @@ PACKAGE ATOMIC_COMPONENTS IS
         );
     END COMPONENT COMPARATOR_NBIT;
 
-
-
-
     -- Entity Definition
     COMPONENT CONV_4_TO_7 IS
         PORT(
@@ -75,6 +72,7 @@ PACKAGE ATOMIC_COMPONENTS IS
     	PORT (
 		    Clk : IN STD_LOGIC;
             RST: IN STD_LOGIC;
+            EN: IN STD_LOGIC;
         	D: IN STD_LOGIC_VECTOR(N DOWNTO 0); 
         	Q : OUT STD_LOGIC_VECTOR(N DOWNTO 0)
     	);
@@ -112,5 +110,27 @@ PACKAGE ATOMIC_COMPONENTS IS
             DATA_OUT: OUT STD_LOGIC_VECTOR (7 DOWNTO 0) -- Output Data
         );
     END COMPONENT RAM_32x8;
+
+    COMPONENT BIN2BCD IS 
+        PORT(
+            A: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            BCD: OUT STD_LOGIC_VECTOR (11 DOWNTO 0)
+        
+    );
+
+    END COMPONENT BIN2BCD;
+
+    COMPONENT DECODERN2 IS
+        GENERIC(
+            N: INTEGER := 4 
+
+        );
+        PORT(
+            X: IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+            Y: OUT STD_LOGIC_VECTOR(2**(N)-1 DOWNTO 0)
+
+        );
+
+    END COMPONENT DECODERN2;
     
 END PACKAGE ATOMIC_COMPONENTS;

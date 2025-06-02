@@ -21,7 +21,28 @@ PACKAGE SUB_SYSTEMS IS
   );
   END COMPONENT FULL_ADDER; 
 
+  COMPONENT FULL_SUBTRACTOR IS 
+    PORT(
+      X1, X2, BIN : IN std_logic;
+      Y : OUT std_logic;
+      BOUT : OUT std_logic
+      
+    );
+  END COMPONENT FULL_SUBTRACTOR;
 
-
+  COMPONENT RIPPLE_BORROWER_SUBTRACTOR IS
+    
+    GENERIC (
+      N: INTEGER := 8
+    );
+    
+    PORT(
+        X1, X2: IN std_logic_vector(N-1 DOWNTO 0);
+        BIN: IN std_logic;
+        Y: OUT std_logic_vector(N-1 DOWNTO 0);
+        BOUT: OUT std_logic
+      );
+      
+  END COMPONENT RIPPLE_BORROWER_SUBTRACTOR;
 
 END PACKAGE SUB_SYSTEMS;

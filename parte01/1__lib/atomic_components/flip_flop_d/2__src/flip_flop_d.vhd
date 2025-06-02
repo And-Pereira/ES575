@@ -11,6 +11,7 @@ ENTITY FLIP_FLOP_D IS
   PORT (
     Clk : IN STD_LOGIC;
     RST: IN STD_LOGIC;
+    EN: IN STD_LOGIC;
     D : IN STD_LOGIC_VECTOR (N DOWNTO 0);
     Q : OUT STD_LOGIC_VECTOR (N DOWNTO 0)
   );
@@ -20,14 +21,14 @@ END ENTITY FLIP_FLOP_D;
 -- Architecture declaration
 ARCHITECTURE BEHAVIOR OF FLIP_FLOP_D IS
 BEGIN
-PROCESS (D, Clk, RST)
+PROCESS (D, Clk, RST, EN)
   BEGIN
     IF RST = '1' THEN
       Q <= (others => '0');
 
     ELSE
     -- Falling edge
-      IF falling_edge(Clk) THEN
+      IF falling_edge(Clk) AND (EN = '1') THEN
         Q <= D;
       END IF;
     END IF;
