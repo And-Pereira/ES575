@@ -1,0 +1,64 @@
+-- Library importing
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.ALL;
+
+LIBRARY ATOMIC_COMPONENTS;
+USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
+
+ENTITY CPU_X IS
+    PORT(
+        INSTRUCTION: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        MUX_CONTROL: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+        EN_CONTROL: OUT STD_LOGIC_VECTOR(7 DOWNTO 0) 
+    );
+END ENTITY CPU_X;
+
+ARCHITECTURE ARCH_CPU OF CPU_X IS
+    SIGNAL REG_MUX: STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL REG_EN: STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL RA, RB: STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL INST: STD_LOGIC_VECTOR(1 DOWNTO 0);
+
+-- ISA: 
+BEGIN
+    MUX_CONTROL_DEC: DECODERN2
+        GENERIC MAP(
+            4
+        )
+        PORT MAP(
+            REG_MUX,
+            MUX_CONTROL
+
+        );
+    
+    EN_CONTROL_DEC: DECODERN2
+        GENERIC MAP(
+            4
+        )
+        PORT MAP(
+            REG_EN,
+            EN_CONTROL
+
+        );
+    
+    RA <= INSTRUCTION(5 DOWNTO 3);
+    RB <= INSTRUCTION(2 DOWNTO 0);
+    INST <= INSTRUCTION (7 DOWNTO 6);
+
+  WITH INST select
+    REG_MUX <= 
+      RB when "00", -- OPCODE 00 --> RA <= RB
+       RB when "01", -- OPCODE 01 --> ROUT <= RB
+       "000" when "11", -- OPCODE 11 --> RA <= EXT_INPUT
+       "000" when others;
+
+  WITH INST select
+    REG_EN <= 
+      RA when "00", -- OPCODE 00 --> RA <= RB
+       "111" when "01", -- OPCODE 01 --> ROUT <= RB
+       RA when "11", -- OPCODE 11 --> RA <= EXT_INPUT
+       "000" when others;
+
+
+END ARCHITECTURE ARCH_CPU;
