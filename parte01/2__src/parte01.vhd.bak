@@ -58,7 +58,7 @@ BEGIN
   IR <= DIN(8 DOWNTO 0);
   -- =================================TESTE=========================
   EN_CONTROL <= TESTE(11 DOWNTO 0);
-  MUX_CONTROL <= TESTE(21 DOWNTO 12);
+  MUX_CONTROL <= TESTE(21 DOWNTO 10);
 
   -- Registers
   GEN_REGS: FOR i IN 0 TO 8 GENERATE

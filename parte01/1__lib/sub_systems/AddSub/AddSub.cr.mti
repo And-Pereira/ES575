@@ -1,0 +1,15 @@
+C:/Users/carol/Desktop/ES575/parte01/1__lib/sub_systems/AddSub/2__src/AddSub.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/carol/Desktop/ES575/parte01/1__lib/sub_systems/AddSub/2__src/AddSub.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package ATOMIC_COMPONENTS
+-- Loading package SUB_SYSTEMS
+-- Compiling entity ADDSUB
+** Error: (vcom-1935) Unable to copy temporary file C:/Users/carol/Desktop/ES575/parte01/1__lib/sub_systems/AddSub/work/_temp/vcom9th1k7 to C:/Users/carol/Desktop/ES575/parte01/1__lib/sub_systems/AddSub/work/addsub/_primary.dat.
+** Error: (vcom-7) Failed to open temporary file "C:/Users/carol/Desktop/ES575/parte01/1__lib/sub_systems/AddSub/work/_temp/vcom9th1k7" in read mode.
+No such file or directory. (errno = ENOENT)
+** Error: C:/Users/carol/Desktop/ES575/parte01/1__lib/sub_systems/AddSub/2__src/AddSub.vhd(28): VHDL Compiler exiting
+
+} {10.0 12.0 13.0 14.0} {}}

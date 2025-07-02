@@ -7,7 +7,7 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/carol/Desktop/ES575/parte01
+Z0 dC:/Users/carol/Desktop/ES575/parte01/2__src/AddSub
 Eaddsub
 Z1 w1751413820
 Z2 DPx11 sub_systems 11 sub_systems 0 22 M0M:[CRV:2TFH>>HM5Cfh1
@@ -24,9 +24,9 @@ V6jiFLhS<4T6bHWF[3EE0]3
 !s100 iYmRecN12d>iDA:T6hPoS3
 Z9 OV;C;10.5b;63
 32
-Z10 !s110 1751418678
+Z10 !s110 1751418006
 !i10b 1
-Z11 !s108 1751418678.000000
+Z11 !s108 1751418006.000000
 Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte01/2__src/AddSub/2__src/AddSub.vhd|
 Z13 !s107 C:/Users/carol/Desktop/ES575/parte01/2__src/AddSub/2__src/AddSub.vhd|
 !i113 1
@@ -50,49 +50,6 @@ R10
 R11
 R12
 R13
-!i113 1
-R14
-R15
-Eparte01
-Z16 w1751420353
-R3
-R4
-R5
-R6
-R0
-Z17 8C:/Users/carol/Desktop/ES575/parte01/2__src/parte01.vhd
-Z18 FC:/Users/carol/Desktop/ES575/parte01/2__src/parte01.vhd
-l0
-L9
-VFQ:NZX4m^c[=?TknaFalm0
-!s100 @RIjj5ah5PF6B>bL4ZALc2
-R9
-32
-Z19 !s110 1751420355
-!i10b 1
-Z20 !s108 1751420355.000000
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte01/2__src/parte01.vhd|
-Z22 !s107 C:/Users/carol/Desktop/ES575/parte01/2__src/parte01.vhd|
-!i113 1
-R14
-R15
-Aarch_parte01
-R3
-R4
-R5
-R6
-DEx4 work 7 parte01 0 22 FQ:NZX4m^c[=?TknaFalm0
-l53
-L19
-Vic;hMQA9RF]H?zBoGN>nK1
-!s100 GUYKL9M9@PY5Whl369ij<3
-R9
-32
-R19
-!i10b 1
-R20
-R21
-R22
 !i113 1
 R14
 R15
