@@ -1,0 +1,55 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/carol/Desktop/ES575/parte01/2__src/CPU_X
+Ecpu_x
+Z1 w1751506951
+Z2 DPx11 sub_systems 11 sub_systems 0 22 M0M:[CRV:2TFH>>HM5Cfh1
+Z3 DPx17 atomic_components 17 atomic_components 0 22 B<TP71;_6F;Dz<E9zKgQM3
+Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z7 8C:/Users/carol/Desktop/ES575/parte01/2__src/CPU_X/2__src/CPU_X.vhd
+Z8 FC:/Users/carol/Desktop/ES575/parte01/2__src/CPU_X/2__src/CPU_X.vhd
+l0
+L12
+Vh;^VG5lQ=X?e9jz4ogb350
+!s100 O94^RccHN8HjT0:@AJ[Jl3
+Z9 OV;C;10.5b;63
+32
+Z10 !s110 1751507177
+!i10b 1
+Z11 !s108 1751507176.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte01/2__src/CPU_X/2__src/CPU_X.vhd|
+Z13 !s107 C:/Users/carol/Desktop/ES575/parte01/2__src/CPU_X/2__src/CPU_X.vhd|
+!i113 1
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Aarch_cpu
+R2
+R3
+R4
+R5
+R6
+Z16 DEx4 work 5 cpu_x 0 22 h;^VG5lQ=X?e9jz4ogb350
+l36
+L23
+Z17 V3nKfPPlBFzB7a?MjM[92a0
+Z18 !s100 1MCnVZkgjj;EY8QNB^XbL1
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
