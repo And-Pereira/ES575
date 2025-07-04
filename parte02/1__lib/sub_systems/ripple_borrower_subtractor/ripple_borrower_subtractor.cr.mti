@@ -1,0 +1,10 @@
+C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/ripple_borrower_subtractor/2__src/ripple_borrower_subtractor.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/carol/Desktop/ES575/parte02/1__lib/sub_systems/ripple_borrower_subtractor/2__src/ripple_borrower_subtractor.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package SUB_SYSTEMS
+-- Compiling entity RIPPLE_BORROWER_SUBTRACTOR
+-- Compiling architecture ARCH_RIPPLE_BORROWER_SUBTRACTOR of RIPPLE_BORROWER_SUBTRACTOR
+
+} {} {}}
