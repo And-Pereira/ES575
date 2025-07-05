@@ -1,0 +1,216 @@
+KEY(0)-- Libraries
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.ALL;
+
+LIBRARY ATOMIC_COMPONENTS;
+USE ATOMIC_COMPONENTS.ATOMIC_COMPONENTS.ALL;
+
+LIBRARY SUB_SYSTEMS;
+USE SUB_SYSTEMS.SUB_SYSTEMS.ALL;
+
+ENTITY CPU_Y IS
+    PORT(
+        INSTRUCTION: IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+        RST, RUN, CLK: IN STD_LOGIC;
+        EN_CONTROL: OUT STD_LOGIC_VECTOR(14 DOWNTO 0); --R0..R7, A, G, IR, addSub, addr, dout, W
+        MUX_CONTROL: OUT STD_LOGIC_VECTOR(9 DOWNTO 0); -- R0 .. R7, G, DIN
+        G: STD_LOGIC; --Checks if G=0
+        DONE: OUT STD_LOGIC
+
+    );
+END ENTITY CPU_Y;
+
+ARCHITECTURE ARCH_CPU OF CPU_Y IS
+    SIGNAL REG_MUX: STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL REG_EN: STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL RA, RB: STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL INST: STD_LOGIC_VECTOR(2 DOWNTO 0);
+
+    SIGNAL RA_DECODE, RB_DECODE: STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL RA_DECODE_INV, RB_DECODE_INV: STD_LOGIC_VECTOR(7 DOWNTO 0);
+
+
+    TYPE STATE_TYPES IS (WAIT_RUN, MV, MVI, ADD1, ADD2, ADD3, SUB1, SUB2, SUB3, LD1, LD2, ST1, ST2, ST3 MVNZ);
+    SIGNAL Y_Q, Y_D: STATE_TYPES; -- Y_Q: FUTURE, Y_D: CURRENT
+
+-- ISA: 
+BEGIN
+    
+    -- Breaking the IR into its parts
+    RA <= INSTRUCTION(5 DOWNTO 3);
+    RB <= INSTRUCTION(2 DOWNTO 0);
+    INST <= INSTRUCTION (8 DOWNTO 6);
+
+
+
+    -- Table of state's transitions
+    PROCESS (RUN, Y_D)
+    BEGIN
+        CASE Y_D IS
+            --Case 1 - Waiting
+            WHEN WAIT_RUN =>
+                IF RUN = '1' THEN 
+                    IF INST = "000" THEN
+                        Y_Q <= MV;
+                    ELSIF INST = "001" THEN
+                        Y_Q <= MVI;
+                    ELSIF INST = "010" THEN
+                        Y_Q <= ADD1;
+                    ELSIF INST = "011" THEN
+                        Y_Q <= SUB1;
+                    ELSIF INST = "100" THEN
+                        Y_Q <= LD1;
+                    ELSIF INST = "101" THEN
+                        Y_Q <= ST1;
+                    ELSIF INST = "110" THEN
+                        Y_Q <= MVNZ;
+
+                    ELSE Y_Q <= WAIT_RUN;
+                    END IF;
+
+                ELSE Y_Q <= WAIT_RUN;
+                END IF;
+            
+            -- Case 2 - MV
+            WHEN MV =>
+                Y_Q <= WAIT_RUN;
+
+            -- Case 3 - MVI
+            WHEN MVI =>
+                Y_Q <= WAIT_RUN;
+
+            -- Case 4 - ADD
+            WHEN ADD1 =>
+                Y_Q <= ADD2;
+
+            -- Case 5 - ADD
+            WHEN ADD2 =>
+                Y_Q <= ADD3;
+
+            -- Case 6 - ADD
+            WHEN ADD3 =>
+                Y_Q <= WAIT_RUN;
+
+            -- Case 7 - SUB
+            WHEN SUB1 =>
+                Y_Q <= SUB2;
+
+            -- Case 8 - SUB
+            WHEN SUB2 =>
+                Y_Q <= SUB3;
+
+            -- Case 9 - SUB
+            WHEN SUB3 =>
+                Y_Q <= WAIT_RUN;
+            
+            -- Case 10 - LOAD
+            WHEN LD1 =>
+                Y_Q <= LD2;
+            
+            -- Case 11 - LOAD
+            WHEN LD2 =>
+                Y_Q <= WAIT_RUN;
+            
+            -- Case 12 - STORE
+            WHEN ST1 =>
+                Y_Q <= ST2;
+
+            -- Case 13 - STORE
+            WHEN ST2 =>
+                Y_Q <= ST3;
+
+            -- Case 14 - STORE
+            WHEN ST3 =>
+                Y_Q <= WAIT_RUN;
+
+            -- Case 15 - Checks if G is zero
+            WHEN MVNZ1 =>
+                IF G = '1'
+                    Y_Q <= WAIT_RUN;
+                
+                ELSE Y_Q <= MV;
+                END IF;
+                        
+        END CASE;
+    END PROCESS;
+
+    -- How FFs work
+    PROCESS (CLK, RST)
+    BEGIN
+        IF (RST = '1') THEN
+            Y_D <= WAIT_RUN;
+
+        ELSIF (rising_edge(CLK) AND RUN = '1') THEN
+            Y_D <= Y_Q; --Current state receives next one
+
+        END IF;
+    END PROCESS;
+
+    --Input definition
+    REG_A_DEC: DECODERN2
+        GENERIC MAP (3)
+        PORT MAP(
+            RA,
+            RA_DECODE_INV
+
+        );
+
+    REG_B_DEC: DECODERN2
+        GENERIC MAP (3)
+        PORT MAP(
+            RB,
+            RB_DECODE_INV
+
+        );
+
+    GEN_INV: FOR i in 0 to 7 GENERATE
+	    RA_DECODE(i) <= RA_DECODE_INV(7 - i);
+	    RB_DECODE(i) <= RB_DECODE_INV(7 - i);
+    END GENERATE;
+
+    -- Output definition
+    WITH Y_D SELECT
+        DONE <=
+            '1' WHEN WAIT_RUN,
+            '0' WHEN OTHERS;
+
+    WITH Y_D SELECT  
+        EN_CONTROL <=
+            "000010000000000" WHEN WAIT_RUN,
+            "0000000"& RA_DECODE WHEN MV, 
+            "0000000" & RA_DECODE WHEN MVI, 
+            "000000100000000" WHEN ADD1, 
+            "000001000000000" WHEN ADD2, 
+            "0000000" & RA_DECODE WHEN ADD3, 
+            "000000100000000" WHEN SUB1, 
+            "000101000000000" WHEN SUB2, 
+            "0000000" & RA_DECODE WHEN SUB3,
+            "001000000000000" WHEN LD1,-- Habilita o endereço
+            "0000000" & RA_DECODE WHEN LD2,-- Habilita o reg que receberá o dado
+            "010000000000000" WHEN ST1, --Habilitar DOUT
+            "001000000000000" WHEN ST1, --Habilitar ADDR
+            "100000000000000" WHEN ST1, --Habilitar Write
+            "000000000000000"  WHEN MVNZ,
+            "000000000000000" WHEN OTHERS;
+
+    WITH Y_D SELECT
+        MUX_CONTROL <=
+            "1000000000" WHEN WAIT_RUN,
+            "00" & RB_DECODE WHEN MV, 
+            "1000000000" WHEN MVI, 
+            "00" & RA_DECODE WHEN ADD1, 
+            "00" & RB_DECODE WHEN ADD2, 
+            "0100000000" WHEN ADD3, 
+            "00" & RA_DECODE WHEN SUB1, 
+            "00" & RB_DECODE WHEN SUB2, 
+            "0100000000" WHEN SUB3, 
+            "00" & RB_DECODE WHEN LD1, -- Seleciona o reg com o endereço
+            "1000000000" WHEN LD2, -- Habilitar o DIN
+            "00" & RA_DECODE WHEN ST1, -- Passar o dado de RA
+            "00" & RB_DECODE WHEN ST2, -- Passar o dado de RB - ENDEREÇO
+            "00" & RB_DECODE WHEN ST3, -- Passar o dado de RB - ENDEREÇO
+            "000000000000000"  WHEN MVNZ,
+            "0000000000" WHEN OTHERS;    
+
+END ARCHITECTURE ARCH_CPU;

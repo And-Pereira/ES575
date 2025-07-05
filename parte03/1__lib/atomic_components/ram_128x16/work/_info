@@ -1,0 +1,51 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16
+Eram_128x16
+Z1 w1751597242
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16/2__src/ram_128x16.vhd
+Z6 FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16/2__src/ram_128x16.vhd
+l0
+L7
+V3Q?oNIEVeIOT5R4W_cB9F0
+!s100 QmYlX=@Mzd>cIP0mCXn:10
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1751597338
+!i10b 1
+Z9 !s108 1751597338.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16/2__src/ram_128x16.vhd|
+Z11 !s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16/2__src/ram_128x16.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+DEx4 work 10 ram_128x16 0 22 3Q?oNIEVeIOT5R4W_cB9F0
+l39
+L17
+Vgn_J]^LY:dma6V3E[3nz@3
+!s100 fW48RO4BHO05>`LLz=b[61
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

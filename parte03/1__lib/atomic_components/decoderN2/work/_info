@@ -1,0 +1,51 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/decoderN2
+Edecodern2
+Z1 w1748829583
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/decoderN2/2__src/decoderN2.vhd
+Z6 FC:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/decoderN2/2__src/decoderN2.vhd
+l0
+L5
+VCzNPLjj?o_mjcWTlEfC]>0
+!s100 P0ZAXe`bm9]gA2YaAj<Wg2
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1748829947
+!i10b 1
+Z9 !s108 1748829946.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/decoderN2/2__src/decoderN2.vhd|
+Z11 !s107 C:/Users/carol/Desktop/ES575/parte01/1__lib/atomic_components/decoderN2/2__src/decoderN2.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Aarch_decodern2
+R2
+R3
+R4
+Z14 DEx4 work 9 decodern2 0 22 CzNPLjj?o_mjcWTlEfC]>0
+l24
+L18
+Z15 Vd`248==V4cKacP7CI`Y?l2
+Z16 !s100 XC@?^7YBiA9AZN:8DN=Qz3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

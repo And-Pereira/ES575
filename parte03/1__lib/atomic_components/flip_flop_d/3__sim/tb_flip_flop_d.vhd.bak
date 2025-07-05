@@ -1,0 +1,101 @@
+-- Library declaration
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all ;
+
+-- Entity declaration
+ENTITY TB_FLIP_FLOP_D IS
+
+END ENTITY TB_FLIP_FLOP_D;
+
+-- Architecture declaration
+ARCHITECTURE BEHAVIORAL OF TB_FLIP_FLOP_D IS
+
+    -- Declare testing component
+    COMPONENT FLIP_FLOP_D IS
+      PORT (
+        T_FF: IN STD_LOGIC; -- Defines the edge type '0' --> falling, '1'--> rising
+        D, Clk : IN STD_LOGIC ;
+        Q : OUT STD_LOGIC
+      );
+    END COMPONENT FLIP_FLOP_D;
+
+    -- Support signals
+    SIGNAL X10: STD_LOGIC;
+    SIGNAL X20: STD_LOGIC;
+    SIGNAL Y0: STD_LOGIC;
+    SIGNAL X11: STD_LOGIC;
+    SIGNAL X21: STD_LOGIC;
+    SIGNAL Y1: STD_LOGIC;
+
+BEGIN
+    --INSTANTIATE COMPONENT
+    
+    FFD_0: FLIP_FLOP_D
+    PORT MAP (
+      '0', X10, X20,
+      Y0
+    );
+    
+    FFD_1: FLIP_FLOP_D
+    PORT MAP (
+      '1', X11, X21,
+      Y1
+    );
+    
+    -- Test process
+    process
+    begin
+        -- Test Case 0: 
+        X10 <= '1';
+        X20 <= '1';
+        wait for 10 ns;
+        assert (Y0 = '1') report "Test Case 0 Failed" severity error;
+
+        -- Test Case 1: 
+        X10 <= '0';
+        X20 <= '1';
+        wait for 10 ns;
+        assert (Y0 = '0') report "Test Case 1 Failed" severity error;
+
+        -- Test Case 2: 
+        X10 <= '0';
+        X20 <= '0';
+        wait for 10 ns;
+        assert (Y0 = '0') report "Test Case 2 Failed" severity error;
+
+        -- Test Case 3: 
+        X10 <= '1';
+        X20 <= '0';
+        wait for 10 ns;
+        assert (Y0 = '0') report "Test Case 3 Failed" severity error;
+
+        -- Test Case 0: 
+        X11 <= '1';
+        X21 <= '1';
+        wait for 10 ns;
+        assert (Y1 = '1') report "Test Case 0 Failed" severity error;
+
+        -- Test Case 1: 
+        X11 <= '0';
+        X21 <= '1';
+        wait for 10 ns;
+        assert (Y1 = '0') report "Test Case 1 Failed" severity error;
+
+        -- Test Case 2: 
+        X11 <= '0';
+        X21 <= '0';
+        wait for 10 ns;
+        assert (Y1 = '0') report "Test Case 2 Failed" severity error;
+
+        -- Test Case 15: 
+        X11 <= '1';
+        X21 <= '0';
+        wait for 10 ns;
+        assert (Y1 = '0') report "Test Case 3 Failed" severity error;
+        
+        -- End of test
+        report "All test cases passed!" severity note;
+        wait;  -- Wait indefinitely
+    end process;
+
+END ARCHITECTURE BEHAVIORAL;

@@ -1,0 +1,193 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/carol/Desktop/ES575/parte02/1__lib
+Patomic_components
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+w1751599876
+R0
+8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/pkg_atomic_components.vhd
+FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/pkg_atomic_components.vhd
+l0
+L6
+VoI02B4Q<Qa[@0GbcXfR^^0
+!s100 cSBIdd=j2@iD`;@J^Y;9e1
+Z3 OV;C;10.5b;63
+32
+!s110 1751727400
+!i10b 1
+!s108 1751727400.000000
+!s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/pkg_atomic_components.vhd|
+!s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/pkg_atomic_components.vhd|
+!i113 1
+Z4 o-work atomic_components
+Z5 tExplicit 1 CvgOpt 0
+Econtador_nbit
+Z6 w1746497688
+Z7 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R0
+Z8 8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/contador_Nbit/2__src/contador_Nbit.vhd
+Z9 FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/contador_Nbit/2__src/contador_Nbit.vhd
+l0
+L7
+V227_Ln5:XfZNB6_Rg8GXJ0
+!s100 @BAlOD35`]Jk5?_FF55RD2
+R3
+32
+Z10 !s110 1751728844
+!i10b 1
+Z11 !s108 1751728844.000000
+Z12 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/contador_Nbit/2__src/contador_Nbit.vhd|
+Z13 !s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/contador_Nbit/2__src/contador_Nbit.vhd|
+!i113 1
+R4
+R5
+Arlt
+R7
+R1
+R2
+DEx4 work 13 contador_nbit 0 22 227_Ln5:XfZNB6_Rg8GXJ0
+l24
+L22
+V@6RFb7ZNE:4W^UW:G;gG52
+!s100 hmFiB]NEDTFVm;[;KS]DC1
+R3
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R4
+R5
+Edecodern2
+Z14 w1748829583
+R7
+R1
+R2
+R0
+Z15 8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/decoderN2/2__src/decoderN2.vhd
+Z16 FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/decoderN2/2__src/decoderN2.vhd
+l0
+L5
+V3L6fMM0Yh509AXQodL[G[2
+!s100 P0ZAXe`bm9]gA2YaAj<Wg2
+R3
+32
+Z17 !s110 1751727518
+!i10b 1
+Z18 !s108 1751727518.000000
+Z19 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/decoderN2/2__src/decoderN2.vhd|
+Z20 !s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/decoderN2/2__src/decoderN2.vhd|
+!i113 1
+R4
+R5
+Aarch_decodern2
+R7
+R1
+R2
+DEx4 work 9 decodern2 0 22 3L6fMM0Yh509AXQodL[G[2
+l24
+L18
+VAbUmXXHJOMYh`KfbY;fB;2
+!s100 XC@?^7YBiA9AZN:8DN=Qz3
+R3
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R4
+R5
+Eflip_flop_d
+Z21 w1748656872
+R1
+R2
+R0
+Z22 8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd
+Z23 FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd
+l0
+L6
+VLg0ZV5Ljh@T>Mf6d2Y]MA0
+!s100 Mc8]EIP1ogmL7]<RE4NS70
+R3
+32
+Z24 !s110 1751727238
+!i10b 1
+Z25 !s108 1751727238.000000
+Z26 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd|
+Z27 !s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/flip_flop_d/2__src/flip_flop_d.vhd|
+!i113 1
+R4
+R5
+Abehavior
+R1
+R2
+DEx4 work 11 flip_flop_d 0 22 Lg0ZV5Ljh@T>Mf6d2Y]MA0
+l23
+L22
+VagP5lSVN2F:L?H;<[N?n@0
+!s100 3KeJTng7B3e=b>5N8^e0C2
+R3
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R4
+R5
+Eram_128x16
+Z28 w1751597242
+R7
+R1
+R2
+R0
+Z29 8C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16/2__src/ram_128x16.vhd
+Z30 FC:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16/2__src/ram_128x16.vhd
+l0
+L7
+VbhJa2;AX_HK]IFO>_?Zfe2
+!s100 QmYlX=@Mzd>cIP0mCXn:10
+R3
+32
+Z31 !s110 1751727313
+!i10b 1
+Z32 !s108 1751727313.000000
+Z33 !s90 -reportprogress|300|-work|atomic_components|C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16/2__src/ram_128x16.vhd|
+Z34 !s107 C:/Users/carol/Desktop/ES575/parte02/1__lib/atomic_components/ram_128x16/2__src/ram_128x16.vhd|
+!i113 1
+R4
+R5
+Abehavioral
+R7
+R1
+R2
+DEx4 work 10 ram_128x16 0 22 bhJa2;AX_HK]IFO>_?Zfe2
+l39
+L17
+VmnZOBn8n>]oMVC=O81;?T2
+!s100 fW48RO4BHO05>`LLz=b[61
+R3
+32
+R31
+!i10b 1
+R32
+R33
+R34
+!i113 1
+R4
+R5

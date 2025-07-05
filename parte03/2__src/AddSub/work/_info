@@ -1,0 +1,55 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/carol/Desktop/ES575/parte01/2__src/AddSub
+Eaddsub
+Z1 w1751413820
+Z2 DPx11 sub_systems 11 sub_systems 0 22 M0M:[CRV:2TFH>>HM5Cfh1
+Z3 DPx17 atomic_components 17 atomic_components 0 22 B<TP71;_6F;Dz<E9zKgQM3
+Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z7 8C:/Users/carol/Desktop/ES575/parte01/2__src/AddSub/2__src/AddSub.vhd
+Z8 FC:/Users/carol/Desktop/ES575/parte01/2__src/AddSub/2__src/AddSub.vhd
+l0
+L14
+V6jiFLhS<4T6bHWF[3EE0]3
+!s100 iYmRecN12d>iDA:T6hPoS3
+Z9 OV;C;10.5b;63
+32
+Z10 !s110 1751418006
+!i10b 1
+Z11 !s108 1751418006.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte01/2__src/AddSub/2__src/AddSub.vhd|
+Z13 !s107 C:/Users/carol/Desktop/ES575/parte01/2__src/AddSub/2__src/AddSub.vhd|
+!i113 1
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Aarch_addsub
+R2
+R3
+R4
+R5
+R6
+DEx4 work 6 addsub 0 22 6jiFLhS<4T6bHWF[3EE0]3
+l36
+L32
+VPVc^4EHcmQ;7S5069OY^J1
+!s100 h_Pj68VibiZ[e6QRbh4Dn1
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
