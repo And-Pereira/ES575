@@ -11,7 +11,7 @@ Z0 dC:/Users/carol/Desktop/ES575/parte02
 Eaddsub
 Z1 w1751413820
 Z2 DPx11 sub_systems 11 sub_systems 0 22 M0M:[CRV:2TFH>>HM5Cfh1
-Z3 DPx17 atomic_components 17 atomic_components 0 22 QEmHhO50EF[[^cMH8P7TX3
+Z3 DPx17 atomic_components 17 atomic_components 0 22 oI02B4Q<Qa[@0GbcXfR^^0
 Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -24,9 +24,9 @@ V6jiFLhS<4T6bHWF[3EE0]3
 !s100 iYmRecN12d>iDA:T6hPoS3
 Z9 OV;C;10.5b;63
 32
-Z10 !s110 1751599286
+Z10 !s110 1751727680
 !i10b 1
-Z11 !s108 1751599286.000000
+Z11 !s108 1751727680.000000
 Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/2__src/AddSub/2__src/AddSub.vhd|
 Z13 !s107 C:/Users/carol/Desktop/ES575/parte02/2__src/AddSub/2__src/AddSub.vhd|
 !i113 1
@@ -69,9 +69,9 @@ Vh;^VG5lQ=X?e9jz4ogb350
 !s100 O94^RccHN8HjT0:@AJ[Jl3
 R9
 32
-Z19 !s110 1751599289
+Z19 !s110 1751727676
 !i10b 1
-Z20 !s108 1751599289.000000
+Z20 !s108 1751727676.000000
 Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/2__src/CPU_X/2__src/CPU_X.vhd|
 Z22 !s107 C:/Users/carol/Desktop/ES575/parte02/2__src/CPU_X/2__src/CPU_X.vhd|
 !i113 1
@@ -113,9 +113,9 @@ V@C<gV1mB[NgM8ZzA5b=e23
 !s100 4iWA=0jA4oi8fORB1h@SC2
 R9
 32
-Z26 !s110 1751599281
+Z26 !s110 1751728932
 !i10b 1
-Z27 !s108 1751599281.000000
+Z27 !s108 1751728932.000000
 Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
 Z29 !s107 C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd|
 !i113 1
@@ -126,11 +126,11 @@ R3
 R4
 R5
 R6
-DEx4 work 7 parte02 0 22 @C<gV1mB[NgM8ZzA5b=e23
+Z30 DEx4 work 7 parte02 0 22 @C<gV1mB[NgM8ZzA5b=e23
 l70
 L21
-VHH9CLDH56Lf^6L?jVYGQ20
-!s100 QjQ5>1GaIfYISZ6ob`aR;2
+Z31 VHH9CLDH56Lf^6L?jVYGQ20
+Z32 !s100 QjQ5>1GaIfYISZ6ob`aR;2
 R9
 32
 R26

@@ -88,7 +88,7 @@ PACKAGE ATOMIC_COMPONENTS IS
             rollover : OUT STD_LOGIC;
             Q : OUT std_logic_vector(N-1 DOWNTO 0)
         );
-        END COMPONENT CONTADOR_NBIT;
+    END COMPONENT CONTADOR_NBIT;
 
     COMPONENT TEMPORIZADOR_NBIT IS
         GENERIC(
