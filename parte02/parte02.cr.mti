@@ -1,4 +1,14 @@
-C:/Users/carol/Desktop/ES575/parte02/2__src/AddSub/2__src/AddSub.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/carol/Desktop/ES575/parte02/2__src/AddSub/2__src/AddSub.vhd
+C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/carol/Desktop/ES575/parte02/2__src/parte02.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package ATOMIC_COMPONENTS
+-- Compiling entity PARTE02
+-- Compiling architecture ARCH_PARTE02 of PARTE02
+
+} {} {}} C:/Users/carol/Desktop/ES575/parte02/2__src/AddSub/2__src/AddSub.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/carol/Desktop/ES575/parte02/2__src/AddSub/2__src/AddSub.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO

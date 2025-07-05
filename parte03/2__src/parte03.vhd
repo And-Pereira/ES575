@@ -20,7 +20,7 @@ END ENTITY PARTE02;
 
 ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
 
-  TYPE REG_LIST IS ARRAY (0 TO 9) OF STD_LOGIC_VECTOR(15 DOWNTO 0); -- R0 .. R7, A, G
+  TYPE REG_LIST IS ARRAY (0 TO 11) OF STD_LOGIC_VECTOR(15 DOWNTO 0); -- R0 .. R7, A, G
   SIGNAL REG_OUTPUT: REG_LIST;
   SIGNAL MUX_INPUT: REG_LIST;
 
@@ -40,6 +40,8 @@ ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
 
   SIGNAL NRST: STD_LOGIC;
 
+  SIGNAL REG_G_OUT: STD_LOGIC;
+
 -- Components
     COMPONENT AddSub IS
       GENERIC(
@@ -57,17 +59,18 @@ ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
             
     END COMPONENT AddSub;
 
-    COMPONENT CPU_X IS
+    COMPONENT CPU_Y IS
       PORT(
           INSTRUCTION: IN STD_LOGIC_VECTOR(8 DOWNTO 0);
           RST, RUN, CLK: IN STD_LOGIC;
-          EN_CONTROL: OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --R0..R7, A, G, IR, addSub
+          EN_CONTROL: OUT STD_LOGIC_VECTOR(14 DOWNTO 0); --R0..R7, A, G, IR, addSub, addr, dout, W
           MUX_CONTROL: OUT STD_LOGIC_VECTOR(9 DOWNTO 0); -- R0 .. R7, G, DIN
+          G: STD_LOGIC; --Checks if G=0
           DONE: OUT STD_LOGIC
 
       );
             
-    END COMPONENT CPU_X;
+    END COMPONENT CPU_Y;
 
 BEGIN
   PCLK <= KEY(2);
@@ -117,7 +120,41 @@ BEGIN
           IR_OUT
       );
 
+      Reg_ADDR: FLIP_FLOP_D
+      GENERIC MAP(
+          15
+      )
+      PORT MAP(
+          PCLK,
+          RST,
+          EN_CONTROL(12),
+          DATA_PATH,
+          REG_OUTPUT(10)
+      );
 
+      Reg_DOUT: FLIP_FLOP_D
+      GENERIC MAP(
+          15
+      )
+      PORT MAP(
+          PCLK,
+          RST,
+          EN_CONTROL(13),
+          DATA_PATH,
+          REG_OUTPUT(11)
+      );
+
+      Reg_W: FLIP_FLOP_D
+      GENERIC MAP(
+          0
+      )
+      PORT MAP(
+          PCLK,
+          RST,
+          '1',
+          EN_CONTROL(14),
+          REG_G_OUT
+      );
 
   
   -- MUX Declaration
@@ -185,8 +222,6 @@ BEGIN
         MCLK, -- Clock signal MCLK
         DIN -- Output Data
 
-      );
-
-  
+      ); 
 
 END ARCHITECTURE ARCH_PARTE02;
