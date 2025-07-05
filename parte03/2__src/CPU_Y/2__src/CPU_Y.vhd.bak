@@ -210,7 +210,7 @@ BEGIN
             "00" & RA_DECODE WHEN ST1, -- Passar o dado de RA
             "00" & RB_DECODE WHEN ST2, -- Passar o dado de RB - ENDEREÇO
             "00" & RB_DECODE WHEN ST3, -- Passar o dado de RB - ENDEREÇO
-            "0000000000"  WHEN MVNZ,
+            "000000000000000"  WHEN MVNZ,
             "0000000000" WHEN OTHERS;    
 
 END ARCHITECTURE ARCH_CPU;
