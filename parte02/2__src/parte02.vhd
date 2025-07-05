@@ -27,7 +27,7 @@ ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
   SIGNAL IR: STD_LOGIC_VECTOR(8 DOWNTO 0); -- Imposto de renda
   SIGNAL IR_OUT: STD_LOGIC_VECTOR(8 DOWNTO 0); -- Imposto de renda
 
-  SIGNAL CLK, RST, RUN: STD_LOGIC;
+  SIGNAL PCLK, MCLK, RST, RUN: STD_LOGIC;
   SIGNAL DIN: STD_LOGIC_VECTOR(15 DOWNTO 0);
   SIGNAL EN_CONTROL: STD_LOGIC_VECTOR(11 DOWNTO 0); --R0..R7, A, G, IR, addSub
   SIGNAL MUX_CONTROL: STD_LOGIC_VECTOR(9 DOWNTO 0); -- R0 .. R7, G, DIN
@@ -37,6 +37,8 @@ ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
 
   SIGNAL ROLL_OVER: STD_LOGIC;
   SIGNAL CONT: STD_LOGIC_VECTOR(6 DOWNTO 0);
+
+  SIGNAL NRST: STD_LOGIC;
 
 -- Components
     COMPONENT AddSub IS
@@ -68,7 +70,9 @@ ARCHITECTURE ARCH_PARTE02 OF PARTE02 IS
     END COMPONENT CPU_X;
 
 BEGIN
-  CLK <= KEY(2);
+  PCLK <= KEY(2);
+  MCLK <= KEY(1);
+  NRST <= NOT(KEY(0));
   RST <= KEY(0);
   RUN <= SW17;
   --DIN <= SW(15 DOWNTO 0);
@@ -81,7 +85,7 @@ BEGIN
           15
       )
       PORT MAP(
-          CLK,
+          PCLK,
           RST,
           EN_CONTROL(i),
           DATA_PATH,
@@ -94,7 +98,7 @@ BEGIN
           15
       )
       PORT MAP(
-          CLK,
+          PCLK,
           RST,
           EN_CONTROL(9),
           RES,
@@ -106,7 +110,7 @@ BEGIN
           8
       )
       PORT MAP(
-          CLK,
+          PCLK,
           RST,
           EN_CONTROL(10),
           IR,
@@ -153,7 +157,7 @@ BEGIN
     MY_CPU: CPU_X
       PORT MAP(
           IR_OUT,
-          KEY(0), SW17, KEY(1), -- reset, run, Pclk
+          RST, SW17, PCLK, -- reset, run, Pclk
           EN_CONTROL, --R0..R7, A, G, IR, addSub
           MUX_CONTROL, -- R0 .. R7, G, DIN
           LEDR17 --Done
@@ -168,7 +172,7 @@ BEGIN
             127 --max val
         )
         PORT MAP(
-            KEY(1), KEY(0), '1',
+            MCLK, NRST, '1', --Clk, reset_n, enable
             ROLL_OVER,
             CONT -- result
         );
@@ -178,7 +182,7 @@ BEGIN
         CONT, --Mem address
         (others =>  '0'), -- Input Data
         '0', -- Control signal
-        KEY(1), -- Clock signal MCLK
+        MCLK, -- Clock signal MCLK
         DIN -- Output Data
 
       );
